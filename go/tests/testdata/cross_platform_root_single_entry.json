@@ -1,0 +1,8 @@
+{
+  "entries": {
+    "3": "0x1111111111111111111111111111111111111111111111111111111111111111"
+  },
+  "expected": "0xeebf049b293cff1b1fb31723b056948f3f4594f216a0b7bbd45eb4d0bebb2737",
+  "name": "single_entry",
+  "treeDepth": 4
+}

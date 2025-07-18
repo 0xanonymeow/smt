@@ -1,0 +1,54 @@
+{
+  "name": "serialization_format_compatibility",
+  "description": "Cross-platform serialization format compatibility test",
+  "testCases": [
+    {
+      "input": "0",
+      "inputType": "bigint",
+      "expected": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "description": "Zero value should serialize to 32 bytes of zeros"
+    },
+    {
+      "input": "1",
+      "inputType": "bigint",
+      "expected": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "description": "One should serialize with proper zero padding"
+    },
+    {
+      "input": "255",
+      "inputType": "bigint",
+      "expected": "0x00000000000000000000000000000000000000000000000000000000000000ff",
+      "description": "Max uint8 value should serialize correctly"
+    },
+    {
+      "input": "65535",
+      "inputType": "bigint",
+      "expected": "0x000000000000000000000000000000000000000000000000000000000000ffff",
+      "description": "Max uint16 value should serialize correctly"
+    },
+    {
+      "input": "4294967295",
+      "inputType": "bigint",
+      "expected": "0x00000000000000000000000000000000000000000000000000000000ffffffff",
+      "description": "Max uint32 value should serialize correctly"
+    },
+    {
+      "input": "1311768467463790320",
+      "inputType": "bigint",
+      "expected": "0x000000000000000000000000000000000000000000000000123456789abcdef0",
+      "description": "Large number should serialize with proper padding"
+    },
+    {
+      "input": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+      "inputType": "bigint",
+      "expected": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "description": "Maximum 32-byte value should serialize correctly"
+    },
+    {
+      "input": "340282366920938463463374607431768211456",
+      "inputType": "bigint",
+      "expected": "0x0000000000000000000000000000000100000000000000000000000000000000",
+      "description": "Power of 2 should serialize correctly"
+    }
+  ]
+}

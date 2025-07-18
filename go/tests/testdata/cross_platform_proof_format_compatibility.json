@@ -1,0 +1,40 @@
+{
+  "description": "Cross-platform proof format compatibility test",
+  "finalRoot": "0xb017a5d19eafdd9e4ee5b8f141b36e1cb52fcaf743f8ebf2e5f5835d34eed74a",
+  "name": "proof_format_compatibility",
+  "proofs": [
+    {
+      "enables": "12",
+      "exists": true,
+      "index": "1",
+      "leaf": "0xc8fe211d36995922781daafd1c6129a29ce8a9acde7d10176166de8f2bdfcaa2",
+      "siblings": [
+        "0xeda5db33358bb4a6980421055e3969bea2d75ade5c0a3d1815e3a88ca8b738a8",
+        "0x245cedff94dbfb80b0c4629e1dd49e07e2278429c0021ff0fa84441f30fcf3cd"
+      ],
+      "value": "0x1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "enables": "12",
+      "exists": true,
+      "index": "5",
+      "leaf": "0xc0f477ea3c439cd3058165602735751c5b09d0559daf8c0b7d298ef2c003161a",
+      "siblings": [
+        "0x0fa4887867c4f70dacbedcd9faaf401d45a10392203cfc323e3f1e6ed4bc8722",
+        "0x245cedff94dbfb80b0c4629e1dd49e07e2278429c0021ff0fa84441f30fcf3cd"
+      ],
+      "value": "0x5555555555555555555555555555555555555555555555555555555555555555"
+    },
+    {
+      "enables": "8",
+      "exists": true,
+      "index": "10",
+      "leaf": "0xf65bdb26faccd6a6aa181bb7617f310987428efc14a1d65505d78c83adbbe932",
+      "siblings": [
+        "0x4539040fdd371d0502aa166d30ff67474bd00885b578ee07f922f1dd0b206edf"
+      ],
+      "value": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "treeDepth": 8
+}

@@ -1,0 +1,24 @@
+{
+  "description": "Cross-platform leaf hash format compatibility test",
+  "leafHashTests": [
+    {
+      "expected": "0x17defc3a53c85213ddccdb5d9a9f0c1241b98ae9ab62e05b3093c0fa959479fd",
+      "index": "0",
+      "name": "zero_leaf",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "expected": "0x6a07add2ca4e675609360b682ceb7aa1b6e03bfd7296ca18d6214144b5b3aed2",
+      "index": "42",
+      "name": "simple_leaf",
+      "value": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+    },
+    {
+      "expected": "0xcb0b78276ca5ae689d9ea6a5a42eb44d547d6992402770713579e188c84f1871",
+      "index": "255",
+      "name": "large_index_leaf",
+      "value": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    }
+  ],
+  "name": "leaf_hash_format_compatibility"
+}

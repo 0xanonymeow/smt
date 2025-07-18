@@ -1,0 +1,39 @@
+{
+  "name": "insert_and_update",
+  "description": "Cross-platform compatibility test for insert_and_update",
+  "treeDepth": 5,
+  "operations": [
+    {
+      "type": "insert",
+      "index": "0x0000000000000000000000000000000000000000000000000000000000000007",
+      "value": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+    },
+    {
+      "type": "update",
+      "index": "0x0000000000000000000000000000000000000000000000000000000000000007",
+      "value": "0xfedcba0987654321fedcba0987654321fedcba0987654321fedcba0987654321"
+    }
+  ],
+  "expected": {
+    "finalRoot": "0xb7876e1627152071f030a772529fbfc002576ca54516d96da25f04248b296edd",
+    "proofResults": [
+      {
+        "index": "0x0000000000000000000000000000000000000000000000000000000000000007",
+        "exists": true,
+        "leaf": "0xfedcba0987654321fedcba0987654321fedcba0987654321fedcba0987654321",
+        "value": "0xfedcba0987654321fedcba0987654321fedcba0987654321fedcba0987654321",
+        "enables": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": []
+      },
+      {
+        "index": "0x0000000000000000000000000000000000000000000000000000000000000007",
+        "exists": true,
+        "leaf": "0xfedcba0987654321fedcba0987654321fedcba0987654321fedcba0987654321",
+        "value": "0xfedcba0987654321fedcba0987654321fedcba0987654321fedcba0987654321",
+        "enables": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": []
+      }
+    ],
+    "hashResults": null
+  }
+}

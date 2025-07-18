@@ -1,0 +1,32 @@
+[
+  {
+    "key": "key1",
+    "value": "0x1111111111111111111111111111111111111111111111111111111111111111",
+    "expectedLeaf": "0x9243f6fedadbcb661178cb81260d6458239a0b00f625d3755b228c40b3acd3cd",
+    "expectedIndex": "13050"
+  },
+  {
+    "key": "complex_key",
+    "value": "0x2222222222222222222222222222222222222222222222222222222222222222",
+    "expectedLeaf": "0xd07faae9be8e310cf2ccbc295b44464e0b4e8f17b7ae0f305f2f0d8543871edc",
+    "expectedIndex": "20196"
+  },
+  {
+    "key": "0",
+    "value": "0x3333333333333333333333333333333333333333333333333333333333333333",
+    "expectedLeaf": "0x7e8ff31cf586a4fbafb73759c75a69356474d9c2bacdcd034a646c9f615eb623",
+    "expectedIndex": "4461"
+  },
+  {
+    "key": "testkey",
+    "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "expectedLeaf": "0x11cd3bccfd9b2b981dbd38e767db36b879d2c3da642744dc74d5b91e6fe3e841",
+    "expectedIndex": "13679"
+  },
+  {
+    "key": "maxkey",
+    "value": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "expectedLeaf": "0x38baf06aca32edf5756198805e9c5a721f26f3fa7b6b46fe2be0259f7d6876d7",
+    "expectedIndex": "5784"
+  }
+]

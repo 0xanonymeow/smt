@@ -1,0 +1,11 @@
+{
+  "enables": "0x3",
+  "expected": "0x6af2453592be75b8eeed572d62eabff1b216e4ec88910e01f3ab977bd6ce45b2",
+  "index": "0x2",
+  "leaf": "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+  "siblings": [
+    "0xfedcba0987654321fedcba0987654321fedcba0987654321fedcba0987654321",
+    "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+  ],
+  "treeDepth": 2
+}

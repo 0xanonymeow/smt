@@ -1,0 +1,73 @@
+[
+  {
+    "operation": "insert",
+    "key": "key1",
+    "value": "0x1111111111111111111111111111111111111111111111111111111111111111",
+    "resultExists": true,
+    "resultLeaf": "0x9243f6fedadbcb661178cb81260d6458239a0b00f625d3755b228c40b3acd3cd",
+    "resultValue": "0x1111111111111111111111111111111111111111111111111111111111111111",
+    "resultIndex": "13050",
+    "resultEnables": "0",
+    "resultSiblings": [],
+    "treeRoot": "0x70c7da692d724f4e00d5ffeee4c149d1f13637ab7a63005fd44c3882ac2e92e1"
+  },
+  {
+    "operation": "insert",
+    "key": "key2",
+    "value": "0x2222222222222222222222222222222222222222222222222222222222222222",
+    "resultExists": true,
+    "resultLeaf": "0x91193e448ba8e5f3b1bd1beb91ea09b12b0ffca7a46ffbbedf99ca659daeb000",
+    "resultValue": "0x2222222222222222222222222222222222222222222222222222222222222222",
+    "resultIndex": "53877",
+    "resultEnables": "32768",
+    "resultSiblings": [
+      "0xf597ad68acc5d494d14380de8725dc92ad68f85f4922cf415289ed1358415b76"
+    ],
+    "treeRoot": "0xca87d8f728014caaca20640edc21e14c1d9c90d637209eb0145658abcf4df7da"
+  },
+  {
+    "operation": "insert",
+    "key": "complex_key",
+    "value": "0x3333333333333333333333333333333333333333333333333333333333333333",
+    "resultExists": true,
+    "resultLeaf": "0x2da6d83f85992f2a3532a00820d912f96929b570a593e2a8b7cbadec36830b1d",
+    "resultValue": "0x3333333333333333333333333333333333333333333333333333333333333333",
+    "resultIndex": "20196",
+    "resultEnables": "49152",
+    "resultSiblings": [
+      "0xab4a932c926d1b361eec8bcf222d1a343c8897953bc0448141bb1034cea25001",
+      "0xaa8c4f2913e7c2b61a23e292fa9a88a06c0b34a9d77c32cf7b7fe0700ae3166e"
+    ],
+    "treeRoot": "0xa3224794ce9819eb6e8647d91da295d37a8bb77f314b3cdb2552fb57f9f2afdc"
+  },
+  {
+    "operation": "update",
+    "key": "key1",
+    "value": "0x4444444444444444444444444444444444444444444444444444444444444444",
+    "resultExists": true,
+    "resultLeaf": "0x8a3ba79733a250528397e59973fbd898920aa26850943439c9780e4dfb68e482",
+    "resultValue": "0x4444444444444444444444444444444444444444444444444444444444444444",
+    "resultIndex": "13050",
+    "resultEnables": "49152",
+    "resultSiblings": [
+      "0x131be12217bdaa25fae86698ef33431a3e6b45bbea639938394c70a405f46286",
+      "0xaa8c4f2913e7c2b61a23e292fa9a88a06c0b34a9d77c32cf7b7fe0700ae3166e"
+    ],
+    "treeRoot": "0x2761ded7b4a9341b73ad7b693660a73ecbebe19ef50470aa183eb975806bbe21"
+  },
+  {
+    "operation": "insert",
+    "key": "final_key",
+    "value": "0x5555555555555555555555555555555555555555555555555555555555555555",
+    "resultExists": true,
+    "resultLeaf": "0x70293f9722d7234ced0b71cfe48d2bfa6649216b4ff96257ba077e5bd01b8ebb",
+    "resultValue": "0x5555555555555555555555555555555555555555555555555555555555555555",
+    "resultIndex": "59050",
+    "resultEnables": "40960",
+    "resultSiblings": [
+      "0x8537f639feb32cd306399d6d0451e7514908a00cd4f2e7269efd5279aea6d0ba",
+      "0x601edd356053033887b0912326794ef67dd7d77afa6cbd4ca800c0b58364e283"
+    ],
+    "treeRoot": "0xf25b38d38b4112c18b27ed072d76b1cfbeb5ba62cff15b994251ab696493e9aa"
+  }
+]

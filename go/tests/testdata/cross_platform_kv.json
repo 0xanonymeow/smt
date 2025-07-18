@@ -1,0 +1,73 @@
+{
+  "name": "sparse_merkle_tree_kv",
+  "description": "Cross-platform compatibility test for SparseMerkleTreeKV",
+  "treeDepth": 256,
+  "operations": [
+    {
+      "type": "insert_kv",
+      "index": "0x1",
+      "value": "0x1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "type": "insert_kv",
+      "index": "0xabc",
+      "value": "0x2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    {
+      "type": "insert_kv",
+      "index": "0xdeadbeef",
+      "value": "0x3333333333333333333333333333333333333333333333333333333333333333"
+    },
+    {
+      "type": "insert_kv",
+      "index": "0x123456789abcdef",
+      "value": "0x4444444444444444444444444444444444444444444444444444444444444444"
+    }
+  ],
+  "expected": {
+    "finalRoot": "0xc57375d7c2962a7a37dda70243cb797ecc4a270331ec46c3d8e11df788732ae6",
+    "proofResults": [
+      {
+        "index": "0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6",
+        "exists": true,
+        "leaf": "0xd0814c723dfbeab20167c65c3fd9167a78cc357c5716a6b2307d55f76dcacadd",
+        "value": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "enables": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": []
+      },
+      {
+        "index": "0x1f212fbb8f3ed578556c57cd51f8754656c7f723c2931b8f5e136c46bb23c2cf",
+        "exists": true,
+        "leaf": "0x619269e1989206950dd4a8427c7e648a50e077bca8bd3cea64f19e9df71a6771",
+        "value": "0x2222222222222222222222222222222222222222222222222222222222222222",
+        "enables": "0x8000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": [
+          "0xd0c5d25bcbbb0cb424c0bcd1b5575b86e4a59662525dddcc0d67062fda6695fc"
+        ]
+      },
+      {
+        "index": "0x2cefe4e59877c202aee3aa8ffbee360a0e2b0b13d3c8a71ff2f292d98141c88b",
+        "exists": true,
+        "leaf": "0xd51b862a2ff6f76927c46f8ebe14c1210c57b9ee32ca750f03ba6defc6a4fd9d",
+        "value": "0x3333333333333333333333333333333333333333333333333333333333333333",
+        "enables": "0xa000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": [
+          "0xda20055d0c683b3e5ba14e7006b219fb7ee9864f88e4e0b19d274a9ab51f4f23",
+          "0xd0c5d25bcbbb0cb424c0bcd1b5575b86e4a59662525dddcc0d67062fda6695fc"
+        ]
+      },
+      {
+        "index": "0x7b276d8223c5a0cb1c37fd6dad4c34e7bce284ccfae986d781d252f852fb9d6d",
+        "exists": true,
+        "leaf": "0x1565d15f8b7db61e0b0dfdd605110ee4aa2833178a2aaf4d89d727b1c726967d",
+        "value": "0x4444444444444444444444444444444444444444444444444444444444444444",
+        "enables": "0xc000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": [
+          "0xc4aa61d3f30240ea99f82825ecd18d71e079bd0bf1a13a5d67304cc98d236bc1",
+          "0xd0c5d25bcbbb0cb424c0bcd1b5575b86e4a59662525dddcc0d67062fda6695fc"
+        ]
+      }
+    ],
+    "hashResults": null
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "kv_edge_cases",
+  "description": "KV cross-platform compatibility test for kv_edge_cases",
+  "operations": [
+    {
+      "type": "insert",
+      "key": "empty",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "type": "insert",
+      "key": "max",
+      "value": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "type": "insert",
+      "key": "mid",
+      "value": "0x8888888888888888888888888888888888888888888888888888888888888888"
+    }
+  ],
+  "expected": {
+    "finalRoot": "0x602437630d9acda4793a594bcb10804211878139a44443163297788fdc94e75f",
+    "keyMappings": [
+      {
+        "key": "empty",
+        "computedIndex": "56960",
+        "leafHash": "0xd07a90d32018f73433e31115b2298298c4ed64352fa17b0592c4c1b9f629c092"
+      },
+      {
+        "key": "max",
+        "computedIndex": "9433",
+        "leafHash": "0x5936a838425ee07c7c0a461a1b916565fc65d0e8f4da7d8ef5b981e5734d5aeb"
+      },
+      {
+        "key": "mid",
+        "computedIndex": "50060",
+        "leafHash": "0x26bcfb77634ab55ba75dcc5cbf46e38074a0cc831947370dd5bf5c502b9ea912"
+      }
+    ],
+    "proofResults": [
+      {
+        "key": "empty",
+        "index": "56960",
+        "exists": true,
+        "leaf": "0xd07a90d32018f73433e31115b2298298c4ed64352fa17b0592c4c1b9f629c092",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "enables": "36864",
+        "siblings": [
+          "0x1f9dcce613b75bfb6b4dc91f415827d036f31198211c003328308c4a6462e784",
+          "0x865742237067e7ad8ae5dab32687f55413ec389c6d09e59f92cccc38aade40d3"
+        ]
+      },
+      {
+        "key": "max",
+        "index": "9433",
+        "exists": true,
+        "leaf": "0x5936a838425ee07c7c0a461a1b916565fc65d0e8f4da7d8ef5b981e5734d5aeb",
+        "value": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "enables": "32768",
+        "siblings": [
+          "0x5450ec5461be687d5d1b51c79c8bff415aceb4f826bba2eb9d721fde27e158a2"
+        ]
+      },
+      {
+        "key": "mid",
+        "index": "50060",
+        "exists": true,
+        "leaf": "0x26bcfb77634ab55ba75dcc5cbf46e38074a0cc831947370dd5bf5c502b9ea912",
+        "value": "0x8888888888888888888888888888888888888888888888888888888888888888",
+        "enables": "36864",
+        "siblings": [
+          "0xc365bc5b745d67e9d3eb84f97782a347dd97c9b666a7c4933eac47aaf6bce678",
+          "0x865742237067e7ad8ae5dab32687f55413ec389c6d09e59f92cccc38aade40d3"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "left": "0x1234567890abcdef",
+    "right": "0xfedcba0987654321",
+    "expected": "0xabcdef1234567890"
+  },
+  {
+    "left": "0x0000000000000000",
+    "right": "0xffffffffffffffff",
+    "expected": "0x1111111111111111"
+  }
+]

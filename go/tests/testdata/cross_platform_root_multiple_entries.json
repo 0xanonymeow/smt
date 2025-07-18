@@ -1,0 +1,10 @@
+{
+  "entries": {
+    "1": "0x1111111111111111111111111111111111111111111111111111111111111111",
+    "10": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "5": "0x5555555555555555555555555555555555555555555555555555555555555555"
+  },
+  "expected": "0x433fc4442efe2a8f1c78ee2ad10021db6de49465c8de43611ffbd7b1ad1b531a",
+  "name": "multiple_entries",
+  "treeDepth": 6
+}

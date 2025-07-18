@@ -1,0 +1,37 @@
+[
+  {
+    "key": "key1",
+    "computedIndex": "13050",
+    "leafHash": "0x9243f6fedadbcb661178cb81260d6458239a0b00f625d3755b228c40b3acd3cd"
+  },
+  {
+    "key": "0xabc",
+    "computedIndex": "49628",
+    "leafHash": "0x97e071ca54e03638e6d99e8f68729d4f1fcc62bb7c5125fa289ade51a9aeff74"
+  },
+  {
+    "key": "longkey123",
+    "computedIndex": "14766",
+    "leafHash": "0x990c6fd66f0a913dc8efe00d7ae5de89c8cae07c71eb0cc229a25e4f82a2c071"
+  },
+  {
+    "key": "12345",
+    "computedIndex": "4326",
+    "leafHash": "0x21fd7b9e87813e2cf8597c9277a434de83a13b096a2e54620afc4fcb7aad1b3a"
+  },
+  {
+    "key": "0",
+    "computedIndex": "4461",
+    "leafHash": "0xe0c95e23bae6ef09d563f841f4964fa11e15fb7a3a64bd47f6cb2c83f694a5e0"
+  },
+  {
+    "key": "test-key",
+    "computedIndex": "7946",
+    "leafHash": "0x670637ebbff925962a0443fc89b8eba0daa44c1be5533152ef83b5d150472e6f"
+  },
+  {
+    "key": "κλειδί",
+    "computedIndex": "18543",
+    "leafHash": "0x211b46af1f66699bea59954e2988555cdad7d74fabf3b433d502ffeacd5e08b8"
+  }
+]

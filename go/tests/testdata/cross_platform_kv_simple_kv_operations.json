@@ -1,0 +1,78 @@
+{
+  "name": "simple_kv_operations",
+  "description": "KV cross-platform compatibility test for simple_kv_operations",
+  "operations": [
+    {
+      "type": "insert",
+      "key": "key1",
+      "value": "0x1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "type": "insert",
+      "key": "key2",
+      "value": "0x2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    {
+      "type": "insert",
+      "key": "key3",
+      "value": "0x3333333333333333333333333333333333333333333333333333333333333333"
+    }
+  ],
+  "expected": {
+    "finalRoot": "0xcab76b7984a562bc4903c9fa0797adf4c9ca0f8a7d2c72027c9a3e3e9de8fd3a",
+    "keyMappings": [
+      {
+        "key": "key1",
+        "computedIndex": "13050",
+        "leafHash": "0x9243f6fedadbcb661178cb81260d6458239a0b00f625d3755b228c40b3acd3cd"
+      },
+      {
+        "key": "key2",
+        "computedIndex": "53877",
+        "leafHash": "0x91193e448ba8e5f3b1bd1beb91ea09b12b0ffca7a46ffbbedf99ca659daeb000"
+      },
+      {
+        "key": "key3",
+        "computedIndex": "802",
+        "leafHash": "0x51b1daf30c45095dbba5b4c9611a983350be09abbf2a0b67bfff3748377ad48e"
+      }
+    ],
+    "proofResults": [
+      {
+        "key": "key1",
+        "index": "13050",
+        "exists": true,
+        "leaf": "0x9243f6fedadbcb661178cb81260d6458239a0b00f625d3755b228c40b3acd3cd",
+        "value": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "enables": "40960",
+        "siblings": [
+          "0x2361324cf7626f0f9e19c5ee9c4379afa0f5267c6d476e6ec6d39dbc14ef08ad",
+          "0xaa8c4f2913e7c2b61a23e292fa9a88a06c0b34a9d77c32cf7b7fe0700ae3166e"
+        ]
+      },
+      {
+        "key": "key2",
+        "index": "53877",
+        "exists": true,
+        "leaf": "0x91193e448ba8e5f3b1bd1beb91ea09b12b0ffca7a46ffbbedf99ca659daeb000",
+        "value": "0x2222222222222222222222222222222222222222222222222222222222222222",
+        "enables": "32768",
+        "siblings": [
+          "0x903dd32a849bde725113bc16315453a89938929917a34d59d5820f118ce2c881"
+        ]
+      },
+      {
+        "key": "key3",
+        "index": "802",
+        "exists": true,
+        "leaf": "0x51b1daf30c45095dbba5b4c9611a983350be09abbf2a0b67bfff3748377ad48e",
+        "value": "0x3333333333333333333333333333333333333333333333333333333333333333",
+        "enables": "40960",
+        "siblings": [
+          "0x8cfe8ea5d046b4015de0c65999f1b388aeb5d603c30472f98adadce70a6329d2",
+          "0xaa8c4f2913e7c2b61a23e292fa9a88a06c0b34a9d77c32cf7b7fe0700ae3166e"
+        ]
+      }
+    ]
+  }
+}

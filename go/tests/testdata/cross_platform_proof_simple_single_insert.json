@@ -1,0 +1,26 @@
+{
+  "name": "simple_single_insert",
+  "description": "Cross-platform proof compatibility test for simple_single_insert",
+  "treeDepth": 4,
+  "operations": [
+    {
+      "type": "insert",
+      "index": "5",
+      "value": "0x1111111111111111111111111111111111111111111111111111111111111111"
+    }
+  ],
+  "expected": {
+    "finalRoot": "0x31cb8ec739563ecad957248a833140ef5a27b1c9371381d179483fe75979c17c",
+    "proofResults": [
+      {
+        "index": "5",
+        "exists": true,
+        "leaf": "0x65acbf7dcf759882d010e14219c110199dfa2135b3a8ea5401f34d70aa814a34",
+        "value": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "enables": "0",
+        "siblings": []
+      }
+    ],
+    "hashResults": null
+  }
+}

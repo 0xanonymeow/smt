@@ -1,0 +1,60 @@
+{
+  "name": "kv_insert_and_update",
+  "description": "KV cross-platform compatibility test for kv_insert_and_update",
+  "operations": [
+    {
+      "type": "insert",
+      "key": "testkey",
+      "value": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+    },
+    {
+      "type": "update",
+      "key": "testkey",
+      "value": "0xfedcba0987654321fedcba0987654321fedcba0987654321fedcba0987654321"
+    },
+    {
+      "type": "insert",
+      "key": "newkey",
+      "value": "0x4444444444444444444444444444444444444444444444444444444444444444"
+    }
+  ],
+  "expected": {
+    "finalRoot": "0x586549f4ff7041d65f841467620006d0c565e27467607d71c9d7fc87ad1d2bcd",
+    "keyMappings": [
+      {
+        "key": "testkey",
+        "computedIndex": "13679",
+        "leafHash": "0xb61b547cfeff28b1ed23e209e647b2d17686a9c0c7ca60a3b4a965981fe4399e"
+      },
+      {
+        "key": "newkey",
+        "computedIndex": "59506",
+        "leafHash": "0xa0b19c8f6c3d19e22e1ceace32bb5bb259347207e3cd30ec5b3f255f2cf7003e"
+      }
+    ],
+    "proofResults": [
+      {
+        "key": "testkey",
+        "index": "13679",
+        "exists": true,
+        "leaf": "0xb61b547cfeff28b1ed23e209e647b2d17686a9c0c7ca60a3b4a965981fe4399e",
+        "value": "0xfedcba0987654321fedcba0987654321fedcba0987654321fedcba0987654321",
+        "enables": "32768",
+        "siblings": [
+          "0xab27ee65cfcfcc371bc08c024812d9624b6eff765d1c2b12de70bb08f7bdd4a3"
+        ]
+      },
+      {
+        "key": "newkey",
+        "index": "59506",
+        "exists": true,
+        "leaf": "0xa0b19c8f6c3d19e22e1ceace32bb5bb259347207e3cd30ec5b3f255f2cf7003e",
+        "value": "0x4444444444444444444444444444444444444444444444444444444444444444",
+        "enables": "32768",
+        "siblings": [
+          "0xbb1fda57388fa25947712c4ee1565d5702f7691b3542fb5831f56a74e4130690"
+        ]
+      }
+    ]
+  }
+}

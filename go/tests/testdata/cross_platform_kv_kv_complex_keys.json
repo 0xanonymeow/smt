@@ -1,0 +1,83 @@
+{
+  "name": "kv_complex_keys",
+  "description": "SparseMerkleTreeKV cross-platform compatibility test for kv_complex_keys",
+  "operations": [
+    {
+      "type": "insert",
+      "key": "0x123456789abcdef0",
+      "value": "0x1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "type": "insert",
+      "key": "0xfedcba0987654321",
+      "value": "0x2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    {
+      "type": "insert",
+      "key": "0xdeadbeefcafebabe",
+      "value": "0x3333333333333333333333333333333333333333333333333333333333333333"
+    },
+    {
+      "type": "update",
+      "key": "0x123456789abcdef0",
+      "value": "0x4444444444444444444444444444444444444444444444444444444444444444"
+    }
+  ],
+  "expected": {
+    "finalRoot": "0x56f338d6ca973a533e3884f65099e2e9d3a64165d175913d8ca196946ac9cb09",
+    "keyMappings": [
+      {
+        "key": "0x123456789abcdef0",
+        "computedIndex": "0xb73a73b5d7b8473432b10ab1c83bf321dbb2994d6922bc8c22ec8548a01200ed",
+        "leafHash": "0xcbd32c41bd8d1571f4b562f96d95aef126511ce38ef3d4989129b3ec5db519b0"
+      },
+      {
+        "key": "0xfedcba0987654321",
+        "computedIndex": "0x36f1ed0677d30721aba6f66f7b55d5c6e3cb02a7c103a976f43ac682fef2e94b",
+        "leafHash": "0xc908b648f77c417d3fc8275c9efa67a5023e3967a88206bd92452bc66ff06175"
+      },
+      {
+        "key": "0xdeadbeefcafebabe",
+        "computedIndex": "0xc2e1e8e993fd6fa1637617c5354fd1bbcd50187f0d721d587eccce2176fa100f",
+        "leafHash": "0xcfd29eea92efe1a7824a8528be3380582424b0c6f2ddc8e00e9ff1e12b21a03a"
+      }
+    ],
+    "proofResults": [
+      {
+        "key": "0x123456789abcdef0",
+        "index": "0xb73a73b5d7b8473432b10ab1c83bf321dbb2994d6922bc8c22ec8548a01200ed",
+        "exists": true,
+        "leaf": "0xcbd32c41bd8d1571f4b562f96d95aef126511ce38ef3d4989129b3ec5db519b0",
+        "value": "0x4444444444444444444444444444444444444444444444444444444444444444",
+        "enables": "0xc000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": [
+          "0x4baa605b88f6e62ce83a9a03b3eec933659c4f42fef2781badc935a855e12f16",
+          "0x1fc32a98edb3c912aebfd47369893fb39e6c6f844899317cbfb3d65236d1ec49"
+        ]
+      },
+      {
+        "key": "0xfedcba0987654321",
+        "index": "0x36f1ed0677d30721aba6f66f7b55d5c6e3cb02a7c103a976f43ac682fef2e94b",
+        "exists": true,
+        "leaf": "0xc908b648f77c417d3fc8275c9efa67a5023e3967a88206bd92452bc66ff06175",
+        "value": "0x2222222222222222222222222222222222222222222222222222222222222222",
+        "enables": "0x8000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": [
+          "0x890894bde5848c8322a741e077050286bd0b62933f9bda1c05ac0abe97f46638"
+        ]
+      },
+      {
+        "key": "0xdeadbeefcafebabe",
+        "index": "0xc2e1e8e993fd6fa1637617c5354fd1bbcd50187f0d721d587eccce2176fa100f",
+        "exists": true,
+        "leaf": "0xcfd29eea92efe1a7824a8528be3380582424b0c6f2ddc8e00e9ff1e12b21a03a",
+        "value": "0x3333333333333333333333333333333333333333333333333333333333333333",
+        "enables": "0xc000000000000000000000000000000000000000000000000000000000000000",
+        "siblings": [
+          "0x303ef30c79b476beba91cc62f458c4896f93e5501b6ea5cbd622cbc405deed64",
+          "0x1fc32a98edb3c912aebfd47369893fb39e6c6f844899317cbfb3d65236d1ec49"
+        ]
+      }
+    ]
+  }
+}
