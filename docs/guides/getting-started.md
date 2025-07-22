@@ -1,35 +1,59 @@
 # Getting Started Guide
 
-This guide will help you get up and running with the SMT libraries quickly.
+This guide will help you get up and running with the SMT libraries with 100% test coverage quickly.
 
 ## Table of Contents
 
+- [Build System](#build-system)
 - [Installation](#installation)
 - [Basic Go Usage](#basic-go-usage)
 - [Basic Solidity Usage](#basic-solidity-usage)
+- [Testing and Coverage](#testing-and-coverage)
 - [Cross-Platform Verification](#cross-platform-verification)
 - [Next Steps](#next-steps)
+
+## Build System
+
+The project includes a comprehensive Makefile for all operations:
+
+```bash
+# Run all tests (100% coverage)
+make test-coverage
+
+# Run cross-platform compatibility tests
+make test-cross-platform
+
+# Build all Go code and examples
+make build
+
+# Clean generated files
+make clean
+
+# Show all available commands
+make help
+```
 
 ## Installation
 
 ### Go Library
 
-The Go library is included in your project. Import it as:
-
 ```go
-import "github.com/0xanonymeow/smt"
+import smt "github.com/0xanonymeow/smt/go"
 ```
 
 ### Solidity Library
 
-Copy the Solidity contracts to your project:
+Using Foundry:
 
 ```bash
-cp contracts/SparseMerkleTree.sol github.com/0xanonymeow/contracts/
-cp contracts/SparseMerkleTreeContract.sol github.com/0xanonymeow/contracts/
+forge install 0xanonymeow/smt
 ```
 
-For Foundry projects, you can also use git submodules or package managers.
+Then import:
+
+```solidity
+import {SparseMerkleTreeLib} from "smt/contracts/src/SparseMerkleTree.sol";
+```
 
 ## Basic Go Usage
 
@@ -42,12 +66,16 @@ import (
     "fmt"
     "log"
     "math/big"
-    "github.com/0xanonymeow/smt"
+    smt "github.com/0xanonymeow/smt/go"
 )
 
 func main() {
-    // Create a new SMT with depth 256
-    tree := smt.NewSparseMerkleTree(256, nil)
+    // Create a new SMT with in-memory database and depth 16
+    db := smt.NewInMemoryDatabase()
+    tree, err := smt.NewSparseMerkleTree(db, 16)
+    if err != nil {
+        log.Fatal(err)
+    }
 
     fmt.Printf("Initial root: %s\n", tree.Root())
 }

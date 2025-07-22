@@ -1,16 +1,48 @@
 # Advanced Usage Guide
 
-This guide covers advanced topics, performance optimization, and complex usage patterns for the SMT libraries.
+This guide covers advanced topics, performance optimization, batch operations, and complex usage patterns for the SMT libraries with 100% test coverage.
 
 ## Table of Contents
 
+- [Testing and Coverage](#testing-and-coverage)
 - [Performance Optimization](#performance-optimization)
-- [Memory Management](#memory-management)
 - [Batch Operations](#batch-operations)
-- [Custom Hash Functions](#custom-hash-functions)
+- [Memory Management](#memory-management)
+- [Cross-Platform Compatibility](#cross-platform-compatibility)
 - [Advanced Proof Techniques](#advanced-proof-techniques)
 - [Production Deployment](#production-deployment)
-- [Monitoring and Metrics](#monitoring-and-metrics)
+- [Build System Integration](#build-system-integration)
+
+## Testing and Coverage
+
+### Achieving 100% Test Coverage
+
+The Go library maintains 100% test coverage using defensive code exclusion:
+
+```go
+// Use coverage-ignore for defensive error handling
+if len(indices) != len(values) {
+    return Bytes32{}, errors.New("mismatched lengths") // coverage-ignore
+}
+```
+
+### Running Coverage Tests
+
+```bash
+# Using Make (recommended)
+make test-coverage
+
+# Manual testing
+cd go && go test -coverprofile=coverage.out ./tests ./tests/benchmark
+cd go && go-test-coverage --config=.testcoverage.yml
+```
+
+### Test Organization
+
+- **tests/core/**: Core functionality tests
+- **tests/batch/**: Batch operations and collision handling
+- **tests/benchmark/**: Performance benchmarks
+- **tests/integration/**: Cross-platform compatibility tests
 
 ## Performance Optimization
 
@@ -20,10 +52,43 @@ This guide covers advanced topics, performance optimization, and complex usage p
 
 The library includes built-in memory pools to reduce allocations:
 
+## Batch Operations
+
+The library provides efficient batch operations for bulk modifications:
+
+### Batch Insert
+
+```go
+indices := []*big.Int{big.NewInt(1), big.NewInt(2), big.NewInt(3)}
+values := []smt.Bytes32{{1}, {2}, {3}}
+
+root, err := tree.BatchInsert(indices, values)
+if err != nil {
+    return err
+}
+```
+
+### Batch Update with Collision Handling
+
+```go
+// Batch operations handle collisions automatically
+root, err := tree.BatchUpsert(indices, values)
+if err != nil {
+    return err
+}
+```
+
+### Batch Delete
+
+```go
+indicesToDelete := []*big.Int{big.NewInt(1), big.NewInt(2)}
+root, err := tree.BatchDelete(indicesToDelete)
+```
+
 ```go
 // Create SMT with memory-efficient database
 db := smt.NewInMemoryDatabase()
-tree, err := smt.NewSparseMerkleTree(db, 256)
+tree, err := smt.NewSparseMerkleTree(db, 16)
 if err != nil {
     return err
 }

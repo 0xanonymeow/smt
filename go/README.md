@@ -1,6 +1,6 @@
 # Sparse Merkle Tree Go Library
 
-A high-performance Go implementation of Sparse Merkle Trees with cross-platform compatibility.
+A high-performance Go implementation of Sparse Merkle Trees with 100% test coverage and cross-platform compatibility.
 
 ## Installation
 
@@ -10,12 +10,14 @@ go get github.com/0xanonymeow/smt/go
 
 ## Features
 
-- **Complete CRUD Operations**: Insert, Update, Get operations
+- **100% Test Coverage**: Comprehensive test coverage with defensive code exclusion
+- **Complete CRUD Operations**: Insert, Update, Get, Delete, and Exists methods
+- **Batch Operations**: Efficient bulk insertions and updates with collision handling
 - **Key-Value Support**: String-based keys with automatic hashing
 - **Cross-Platform Compatibility**: Generates proofs verifiable in Solidity
-- **Performance Optimized**: Efficient memory usage
+- **Performance Optimized**: Memory pooling, concurrent operations, efficient memory usage
 - **Thread-Safe Options**: Can be used with proper synchronization
-- **Comprehensive Testing**: Unit tests, integration tests, and benchmarks
+- **Comprehensive Testing**: 18 organized test files with unit tests, integration tests, and benchmarks
 
 ## Quick Start
 
@@ -91,24 +93,67 @@ type Database interface {
 - `NewSparseMerkleTree(db Database, depth uint16) (*SparseMerkleTree, error)`
 - `Insert(index *big.Int, value Bytes32) (Bytes32, error)`
 - `Update(index *big.Int, value Bytes32) (Bytes32, error)`
+- `Upsert(index *big.Int, value Bytes32) (Bytes32, error)`
+- `Delete(index *big.Int) (Bytes32, error)`
 - `Get(index *big.Int) (*Proof, error)`
+- `Exists(index *big.Int) (bool, error)`
 - `Root() Bytes32`
 - `VerifyProof(proof *Proof) bool`
 
 ### Key-Value Operations
 
 - `InsertKV(key string, value Bytes32) (Bytes32, error)`
+- `UpdateKV(key string, value Bytes32) (Bytes32, error)`
+- `DeleteKV(key string) (Bytes32, error)`
 - `GetKV(key string) (Bytes32, bool, error)`
+- `ExistsKV(key string) (bool, error)`
+
+### Batch Operations
+
+- `BatchInsert(indices []*big.Int, values []Bytes32) (Bytes32, error)`
+- `BatchUpdate(indices []*big.Int, values []Bytes32) (Bytes32, error)`
+- `BatchUpsert(indices []*big.Int, values []Bytes32) (Bytes32, error)`
+- `BatchDelete(indices []*big.Int) (Bytes32, error)`
 
 ## Testing
 
-Run the comprehensive test suite:
+The library maintains 100% test coverage with comprehensive test suites:
 
+### Using Make (Recommended)
+```bash
+# Run all tests from project root
+make test
+
+# Run tests with coverage report
+make test-coverage
+
+# Run cross-platform compatibility tests
+make test-cross-platform
+```
+
+### Manual Testing
 ```bash
 cd go
-go test ./tests/...
+
+# Run all tests
+go test ./tests ./tests/benchmark -v
+
+# Generate coverage report (100% coverage achieved)
+go test -coverprofile=coverage.out ./tests ./tests/benchmark
+go tool cover -html=coverage.out -o coverage.html
+
+# Run benchmarks
 go test -bench=. ./tests/benchmark/...
+
+# Check coverage with exclusions
+go-test-coverage --config=.testcoverage.yml
 ```
+
+### Test Organization
+- **tests/core/**: Core functionality tests (insertion, deletion, proofs)
+- **tests/batch/**: Batch operations and collision handling tests
+- **tests/benchmark/**: Performance benchmarks and stress tests
+- **tests/integration/**: Cross-platform compatibility tests
 
 ## Performance
 

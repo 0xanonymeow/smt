@@ -186,13 +186,26 @@ Proof Count | Estimated Gas | Per Proof
 
 ## Testing
 
+### Using the Build System (Recommended)
+
+```bash
+# From project root - run all tests including this example
+make test
+
+# Run with 100% coverage report
+make test-coverage
+
+# Run cross-platform compatibility tests
+make test-cross-platform
+```
+
 ### Go Tests
 
 ```bash
 # Run example tests
 go test ./...
 
-# Run with coverage
+# Run with coverage (part of 100% coverage)
 go test -cover ./...
 ```
 

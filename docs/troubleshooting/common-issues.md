@@ -1,6 +1,6 @@
 # Common Issues and Solutions
 
-This guide covers the most frequently encountered issues when using the SMT libraries and their solutions.
+This guide covers the most frequently encountered issues when using the SMT libraries and their solutions, including testing, coverage, and build system issues.
 
 ## Table of Contents
 

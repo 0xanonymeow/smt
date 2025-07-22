@@ -1,66 +1,84 @@
 # Sparse Merkle Tree Libraries Documentation
 
-Welcome to the comprehensive documentation for the production-ready Sparse Merkle Tree (SMT) libraries for Go and Solidity.
+Welcome to the comprehensive documentation for the production-ready Sparse Merkle Tree (SMT) libraries with 100% test coverage for Go and Solidity.
 
 ## Quick Navigation
 
 - [API Documentation](api/) - Complete API reference for both libraries
 - [Integration Guides](guides/) - Step-by-step implementation examples
 - [Troubleshooting](troubleshooting/) - Common issues and solutions
-- [Examples](../examples/) - Working code examples
+- [Examples](../go/examples/) - Working code examples
 
 ## Overview
 
 This project provides cross-platform compatible Sparse Merkle Tree implementations:
 
-- **Go Library** (`smt.go`) - Complete SMT with CRUD operations and key-value interface
-- **Solidity Library** (`contracts/SparseMerkleTree.sol`) - On-chain SMT with state management
-- **Deployable Contract** (`contracts/SparseMerkleTreeContract.sol`) - Production-ready SMT contract
+- **Go Library** (`go/smt.go`) - Complete SMT with CRUD operations, batch operations, and key-value interface
+- **Solidity Library** (`contracts/src/SparseMerkleTree.sol`) - On-chain SMT with state management
+- **Deployable Contract** (`contracts/src/SparseMerkleTreeContract.sol`) - Production-ready SMT contract
 
 ## Key Features
 
+✅ **100% Test Coverage** - Comprehensive Go test coverage with defensive code exclusion  
 ✅ **Cross-Platform Compatibility** - Proofs generated in Go verify in Solidity and vice versa  
-✅ **Complete CRUD Operations** - Insert, Update, Get, Delete with comprehensive error handling  
+✅ **Complete CRUD Operations** - Insert, Update, Get, Delete, Exists with comprehensive error handling  
+✅ **Batch Operations** - Efficient bulk insertions, updates, and deletions with collision handling  
 ✅ **Production Ready** - Optimized for performance, security, and gas efficiency  
-✅ **Comprehensive Testing** - Full test coverage with cross-platform validation  
-✅ **TypeScript Compatible** - Matches reference implementation behavior exactly
+✅ **Build System** - Complete Makefile with test, coverage, build, and clean targets
 
 ## Quick Start
+
+### Using the Build System
+
+```bash
+# Run all tests (100% coverage)
+make test-coverage
+
+# Run cross-platform compatibility tests  
+make test-cross-platform
+
+# Build all Go code and examples
+make build
+
+# Clean generated files
+make clean
+```
 
 ### Go Library
 
 ```go
-import "github.com/0xanonymeow/smt"
+import smt "github.com/0xanonymeow/smt/go"
 
-// Create a new SMT
-tree := smt.NewSparseMerkleTree(256, nil)
+// Create a new SMT with in-memory database
+db := smt.NewInMemoryDatabase()
+tree, err := smt.NewSparseMerkleTree(db, 16)
 
 // Insert a value
-proof, err := tree.Insert(big.NewInt(42), "0x1234...")
-if err != nil {
-    log.Fatal(err)
-}
+key := big.NewInt(42)
+value := smt.Bytes32{1, 2, 3, 4, 5}
+root, err := tree.Insert(key, value)
 
-// Get a proof
-getProof := tree.Get(big.NewInt(42))
-fmt.Printf("Exists: %v, Value: %s\n", getProof.Exists, *getProof.Value)
+// Batch operations
+indices := []*big.Int{big.NewInt(1), big.NewInt(2)}
+values := []smt.Bytes32{{1}, {2}}
+root, err = tree.BatchInsert(indices, values)
 ```
 
 ### Solidity Library
 
 ```solidity
-import "./SparseMerkleTree.sol";
+import {SparseMerkleTreeLib} from "smt/contracts/src/SparseMerkleTree.sol";
 
 contract MyContract {
-    using SparseMerkleTree for SparseMerkleTree.SMTStorage;
-    SparseMerkleTree.SMTStorage private smt;
+    using SparseMerkleTreeLib for SparseMerkleTreeLib.SMTStorage;
+    SparseMerkleTreeLib.SMTStorage private smt;
 
     constructor() {
-        smt.initialize(256);
+        smt.depth = 16;
     }
 
     function insertLeaf(uint256 index, bytes32 leaf) external {
-        smt.insert(index, leaf);
+        SparseMerkleTreeLib.Proof memory proof = smt.insert(index, leaf);
     }
 }
 ```

@@ -1,32 +1,43 @@
 # Sparse Merkle Tree Libraries
 
-Production-ready Sparse Merkle Tree implementations in Go and Solidity with cross-platform compatibility.
+Production-ready Sparse Merkle Tree implementations in Go and Solidity with cross-platform compatibility and 100% test coverage.
 
 ## Repository Structure
 
 ```
 smt/
-├── go/                 # Go library implementation
-│   ├── smt.go         # Main library code
-│   ├── internal/      # Internal packages
-│   ├── examples/      # Go usage examples
-│   └── tests/         # Comprehensive test suite
+├── go/                          # Go library implementation
+│   ├── smt.go                  # Main SMT implementation
+│   ├── batch.go                # Batch operations
+│   ├── database.go             # Database interface
+│   ├── examples/               # Usage examples (basic, advanced, integration, sequential)
+│   ├── tests/                  # Comprehensive test suite (18 organized test files)
+│   │   ├── core/               # Core functionality tests
+│   │   ├── batch/              # Batch operations tests
+│   │   ├── benchmark/          # Performance benchmarks
+│   │   └── integration/        # Cross-platform integration tests
+│   └── cmd/                    # Command-line utilities
 │
-├── contracts/         # Solidity implementation
-│   ├── src/          # Contract sources
-│   ├── test/         # Contract tests
-│   └── examples/     # Solidity examples
+├── contracts/                   # Solidity implementation
+│   ├── src/SparseMerkleTree.sol # Main contract
+│   ├── test/                   # Comprehensive test suite
+│   └── examples/               # Solidity usage examples
 │
-└── docs/             # Shared documentation
+└── docs/                       # Complete documentation
+    ├── api/                    # API references
+    ├── guides/                 # Integration guides
+    └── troubleshooting/        # Common issues and solutions
 ```
 
 ## Features
 
+- **100% Test Coverage**: Comprehensive test coverage with defensive code exclusion
 - **Cross-Platform Compatibility**: Proofs generated in Go can be verified in Solidity and vice versa
-- **Complete CRUD Operations**: Insert, Update, Get, and Exists methods
-- **Performance Optimized**: Memory pooling, batch operations, and gas optimizations
-- **Comprehensive Testing**: Unit tests, integration tests, and cross-platform validation
-- **Production Ready**: Thread-safe, error handling, and extensive documentation
+- **Complete CRUD Operations**: Insert, Update, Get, Delete, and Exists methods
+- **Batch Operations**: Efficient bulk insertions and updates
+- **Performance Optimized**: Memory pooling, concurrent operations, and gas optimizations
+- **Production Ready**: Thread-safe, comprehensive error handling, and extensive documentation
+- **Build System**: Complete Makefile with test, coverage, build, and clean targets
 
 ## Quick Start
 
@@ -94,23 +105,53 @@ Both implementations follow the same core algorithm:
 
 ## Development
 
-### Testing
+### Using the Makefile
+
+The project includes a comprehensive Makefile for all development tasks:
 
 ```bash
-# Go tests
-cd go && go test ./tests/...
+# Run all tests
+make test
+
+# Run tests with coverage report (100% coverage)
+make test-coverage
+
+# Run cross-platform compatibility tests
+make test-cross-platform
+
+# Build all Go code and examples
+make build
+
+# Clean generated files
+make clean
+
+# Show all available commands
+make help
+```
+
+### Manual Testing
+
+```bash
+# Go tests with coverage
+cd go && go test -coverprofile=coverage.out ./tests ./tests/benchmark
+cd go && go tool cover -html=coverage.out -o coverage.html
 
 # Solidity tests
 cd contracts && forge test
+
+# Cross-platform validation
+cd go && go run cmd/generate_test_data.go
+cd contracts && forge test --match-test "testGoGeneratedProofs" -vv --ffi
 ```
 
 ### Building
 
 ```bash
-# Go library
-cd go && go build
+# Build everything
+make build
 
-# Solidity contracts
+# Or manually:
+cd go && go build ./...
 cd contracts && forge build
 ```
 

@@ -154,13 +154,40 @@ The library includes several gas optimizations:
 
 ## Testing
 
-Run the test suite using Foundry:
+### Using Make (Recommended)
+```bash
+# Run all tests from project root
+make test
 
+# Run cross-platform compatibility tests
+make test-cross-platform
+```
+
+### Manual Testing
 ```bash
 cd contracts
+
+# Run all tests
 forge test
+
+# Run with gas reporting
 forge test --gas-report
+
+# Run specific test patterns
+forge test --match-test "testInsert"
+forge test --match-test "testCrossPlatform"
+
+# Run cross-platform validation with Go-generated data
+forge test --match-test "testGoGeneratedProofs" -vv --ffi
 ```
+
+### Test Coverage
+The Solidity implementation includes comprehensive tests for:
+- Core tree operations (insert, update, get)
+- Proof generation and verification
+- Cross-platform compatibility with Go implementation
+- Gas optimization validation
+- Error handling and edge cases
 
 ## Cross-Platform Compatibility
 

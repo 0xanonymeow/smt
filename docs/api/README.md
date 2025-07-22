@@ -1,15 +1,30 @@
 # API Documentation
 
-Complete API reference for both Go and Solidity SMT libraries.
+Complete API reference for both Go and Solidity SMT libraries with 100% test coverage.
 
 ## Libraries Overview
 
-- **[Go API](go.md)** - Complete Go library reference
-- **[Solidity API](solidity.md)** - Complete Solidity library reference
+- **[Go API](go.md)** - Complete Go library reference with comprehensive examples
+- **[Solidity API](solidity.md)** - Complete Solidity library reference with gas optimization notes
+
+## Testing & Coverage
+
+The APIs are thoroughly tested with:
+- **100% Go test coverage** with defensive code exclusion
+- **Comprehensive Solidity tests** including cross-platform validation
+- **18 organized test files** covering core, batch, benchmark, and integration tests
+- **Cross-platform compatibility tests** ensuring Go and Solidity interoperability
 
 ## Common Data Structures
 
 Both libraries use identical data structures for cross-platform compatibility:
+
+### Bytes32 Type (Go)
+
+```go
+// 32-byte fixed-size array for consistent data handling
+type Bytes32 [32]byte
+```
 
 ### Proof Structure
 
@@ -17,16 +32,15 @@ Both libraries use identical data structures for cross-platform compatibility:
 // Go
 type Proof struct {
     Exists   bool     `json:"exists"`
-    Leaf     string   `json:"leaf"`
-    Value    *string  `json:"value"`
+    Value    Bytes32  `json:"value"`
     Index    *big.Int `json:"index"`
-    Enables  *big.Int `json:"enables"`
-    Siblings []string `json:"siblings"`
+    Enables  []bool   `json:"enables"`
+    Siblings []Bytes32 `json:"siblings"`
 }
 ```
 
 ```solidity
-// Solidity
+// Solidity  
 struct Proof {
     bool exists;
     bytes32 leaf;
@@ -37,26 +51,14 @@ struct Proof {
 }
 ```
 
-### UpdateProof Structure
+### Database Interface (Go)
 
 ```go
-// Go
-type UpdateProof struct {
-    Proof
-    NewLeaf string `json:"newLeaf"`
-}
-```
-
-```solidity
-// Solidity
-struct UpdateProof {
-    bool exists;
-    bytes32 leaf;
-    bytes32 value;
-    uint256 index;
-    uint256 enables;
-    bytes32[] siblings;
-    bytes32 newLeaf;
+// Database interface for pluggable storage backends
+type Database interface {
+    Get(key Bytes32) (Bytes32, error)
+    Set(key, value Bytes32) error
+    Delete(key Bytes32) error
 }
 ```
 

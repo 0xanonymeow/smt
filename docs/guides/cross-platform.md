@@ -1,6 +1,6 @@
 # Cross-Platform Integration Guide
 
-This guide demonstrates how to use the Go and Solidity SMT libraries together for seamless cross-platform operations.
+This guide demonstrates how to use the Go and Solidity SMT libraries together for seamless cross-platform operations with automated testing via the build system.
 
 ## Table of Contents
 
