@@ -1,0 +1,165 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Go workspace file
+go.work
+
+# Dependency directories
+vendor/
+node_modules/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Project specific
+.kiro
+.claude
+
+# Compiled binaries (from examples)
+go/basic_usage
+go/advanced_operations
+go/examples/*/basic_usage
+go/examples/*/advanced_operations
+
+# Solidity build artifacts
+contracts/cache/
+contracts/out/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# Build directories
+build/
+dist/
+target/
+bin/
+obj/
+
+# Coverage files
+coverage/
+*.lcov
+coverage.xml
+coverage.json
+*.gcov
+*.gcda
+*.gcno
+
+# Debug files
+*.pdb
+*.map
+core
+core.*
+debug.log
+trace.log
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
+*.7z
+*.pkg
+*.deb
+*.rpm
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+*.env
+
+# Lock files (optional, depending on preference)
+package-lock.json
+yarn.lock
+Cargo.lock
+poetry.lock
+
+# Generated documentation
+docs/build/
+site/
+_site/
+
+# Cache directories
+.cache/
+.npm/
+.yarn/
+.pnpm-store/
+.next/
+.nuxt/
+.sass-cache/
+
+# Runtime files
+*.pid
+*.seed
+*.sock
+
+# Test output
+test-results/
+junit.xml
+*.tap
+coverage*
+!coverage*.go
+
+# Profiling files
+*.prof
+*.cpu
+*.mem
+*.trace
+
+# Generated code
+generated/
+codegen/
+*.generated.*
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+*.rdb
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Python specific (if any Python tooling)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Rust specific (if any Rust tooling)
+Cargo.lock
+target/
+
+# Java specific (if any Java tooling)
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
