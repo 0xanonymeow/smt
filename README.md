@@ -1,4 +1,4 @@
-# Sparse Merkle Tree Libraries
+# Sparse Merkle Tree
 
 Production-ready Sparse Merkle Tree implementations in Go and Solidity with cross-platform compatibility and 100% test coverage.
 
@@ -158,7 +158,9 @@ cd contracts && forge build
 ## Documentation
 
 - [API Documentation](docs/api/)
-- [Integration Guide](docs/guides/integration-guide.md)
+- [Getting Started Guide](docs/guides/getting-started.md)
+- [Cross-Platform Integration](docs/guides/cross-platform.md)
+- [Advanced Usage](docs/guides/advanced.md)
 - [Troubleshooting](docs/troubleshooting/)
 
 ## License
