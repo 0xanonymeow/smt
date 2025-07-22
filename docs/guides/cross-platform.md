@@ -1,14 +1,13 @@
 # Cross-Platform Integration Guide
 
-This guide demonstrates how to use the Go and Solidity SMT libraries together for seamless cross-platform operations with automated testing via the build system.
+This guide demonstrates how to use Go for proof generation and Solidity for on-chain verification, focusing on practical cross-platform proof compatibility.
 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Architecture Patterns](#architecture-patterns)
 - [Proof Compatibility](#proof-compatibility)
-- [Hybrid Applications](#hybrid-applications)
-- [State Synchronization](#state-synchronization)
+- [Practical Use Cases](#practical-use-cases)
+- [Cross-Platform Testing](#cross-platform-testing)
 - [Best Practices](#best-practices)
 
 ## Overview
