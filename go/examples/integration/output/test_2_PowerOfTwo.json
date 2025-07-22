@@ -1,0 +1,56 @@
+{
+  "name": "PowerOfTwo",
+  "description": "Test with array length that is a power of 2",
+  "treeData": {
+    "root": "0x5225e22c2b6965af56c3449bc6e7fb0b0ee43933ee9f6a4f70c96978f8ed9059",
+    "depth": 2,
+    "length": 4,
+    "proofs": [
+      {
+        "index": 0,
+        "leaf": "0x17defc3a53c85213ddccdb5d9a9f0c1241b98ae9ab62e05b3093c0fa959479fd",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "enables": "3",
+        "siblings": [
+          "0x47956e2c6409698a429a8e4cbc3f17a493e5a514607b6026d832b5a0e2bd2db5",
+          "0x00a2ed0f904156a9d6f3f6e8f330dc263078a930093a8e3e80e07fb5e4703691"
+        ]
+      },
+      {
+        "index": 1,
+        "leaf": "0x47956e2c6409698a429a8e4cbc3f17a493e5a514607b6026d832b5a0e2bd2db5",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "enables": "3",
+        "siblings": [
+          "0x17defc3a53c85213ddccdb5d9a9f0c1241b98ae9ab62e05b3093c0fa959479fd",
+          "0x00a2ed0f904156a9d6f3f6e8f330dc263078a930093a8e3e80e07fb5e4703691"
+        ]
+      },
+      {
+        "index": 2,
+        "leaf": "0x7d0527eccac747f1036cadf4ddcdb7ce2c51e1d87107d0a8e9e7bf1a93bed532",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000004",
+        "enables": "3",
+        "siblings": [
+          "0xaefad37936b5a74c3fb3b6b21bd91a7989761be6b502c45eb2dd7aef3a7c54fe",
+          "0xa474a051a11aaf8a1326f2d126262d4787ee10567ab2e7d0db492e97c4d511ea"
+        ]
+      },
+      {
+        "index": 3,
+        "leaf": "0xaefad37936b5a74c3fb3b6b21bd91a7989761be6b502c45eb2dd7aef3a7c54fe",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000008",
+        "enables": "3",
+        "siblings": [
+          "0x7d0527eccac747f1036cadf4ddcdb7ce2c51e1d87107d0a8e9e7bf1a93bed532",
+          "0xa474a051a11aaf8a1326f2d126262d4787ee10567ab2e7d0db492e97c4d511ea"
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "treeDepth": 2,
+    "length": 4,
+    "minOpsPerSecond": 1000
+  }
+}

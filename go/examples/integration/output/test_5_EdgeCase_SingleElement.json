@@ -1,0 +1,23 @@
+{
+  "name": "EdgeCase_SingleElement",
+  "description": "Edge case with single element",
+  "treeData": {
+    "root": "0x3935744bb6c202c29c0e9161b0564422496cb5d15134135c9d3b70c123e5fd4b",
+    "depth": 1,
+    "length": 1,
+    "proofs": [
+      {
+        "index": 0,
+        "leaf": "0x681f90a7b5c654f780bfb5e73199acf10aabdd8b957bdefa56e40e23f90618d5",
+        "value": "0x00000000000000000000000000000000000000000000000000000000deadbeef",
+        "enables": "0",
+        "siblings": []
+      }
+    ]
+  },
+  "expected": {
+    "treeDepth": 1,
+    "length": 1,
+    "minOpsPerSecond": 5000
+  }
+}

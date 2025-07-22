@@ -1,0 +1,60 @@
+{
+  "root": "0x7bb7c0cf05d5555e450a27a30a9211a91fb243adc04ec24e81c617492dbaa7fe",
+  "depth": 3,
+  "length": 5,
+  "proofs": [
+    {
+      "index": 0,
+      "leaf": "0xb91e6fbde43659818c544964cff3ae88c78801362063f1aada4d5828a050a892",
+      "value": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "enables": "7",
+      "siblings": [
+        "0x9a40a637e20f20ed7dce2b62ff1bbd332d30f6b0679793ad79ddd0bb30802749",
+        "0x92451c5a7e492b80f2171fb5bd41f226bebfb80aed0ca1b9d07c1233697c7c4b",
+        "0x4e184e1fdd28c33589da3a1558129cdb05122ec3976312d1a8902c6741cd89e8"
+      ]
+    },
+    {
+      "index": 1,
+      "leaf": "0x9a40a637e20f20ed7dce2b62ff1bbd332d30f6b0679793ad79ddd0bb30802749",
+      "value": "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe",
+      "enables": "7",
+      "siblings": [
+        "0xb91e6fbde43659818c544964cff3ae88c78801362063f1aada4d5828a050a892",
+        "0x92451c5a7e492b80f2171fb5bd41f226bebfb80aed0ca1b9d07c1233697c7c4b",
+        "0x4e184e1fdd28c33589da3a1558129cdb05122ec3976312d1a8902c6741cd89e8"
+      ]
+    },
+    {
+      "index": 2,
+      "leaf": "0x6e20ce7cbd43a6a1c265c3e2502eb2e13ad7ae2b2053994944a03e845f179676",
+      "value": "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffd",
+      "enables": "7",
+      "siblings": [
+        "0x74938c10550c4c7d1f22ef5979e812afc0cbc4149a0794e26fd781f4d370b4ee",
+        "0x2b33a8939ac5289159b83a350571a472c929ca6024775a44ffcefeb2d63fa572",
+        "0x4e184e1fdd28c33589da3a1558129cdb05122ec3976312d1a8902c6741cd89e8"
+      ]
+    },
+    {
+      "index": 3,
+      "leaf": "0x74938c10550c4c7d1f22ef5979e812afc0cbc4149a0794e26fd781f4d370b4ee",
+      "value": "0x8000000000000000000000000000000000000000000000000000000000000000",
+      "enables": "7",
+      "siblings": [
+        "0x6e20ce7cbd43a6a1c265c3e2502eb2e13ad7ae2b2053994944a03e845f179676",
+        "0x2b33a8939ac5289159b83a350571a472c929ca6024775a44ffcefeb2d63fa572",
+        "0x4e184e1fdd28c33589da3a1558129cdb05122ec3976312d1a8902c6741cd89e8"
+      ]
+    },
+    {
+      "index": 4,
+      "leaf": "0x974a931279181b8165cf91ee2d006390e8e9d1d0e04ab216140e713502af1de4",
+      "value": "0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "enables": "4",
+      "siblings": [
+        "0x0b3f5392728c770d67b910c43e5dce4293b56ee886ca6f589dffc731131d806f"
+      ]
+    }
+  ]
+}

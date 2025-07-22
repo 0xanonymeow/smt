@@ -1,0 +1,11 @@
+# Test coverage configuration for SMT implementation
+profile: coverage.out
+threshold:
+  # Set to 100% since we're using coverage-ignore for defensive code
+  total: 100
+exclude:
+  # Exclude utility and example directories
+  paths:
+    - cmd/
+    - internal/
+    - tests/test_utils.go

@@ -1,0 +1,132 @@
+{
+  "name": "MediumArray",
+  "description": "Performance test with medium-sized array",
+  "treeData": {
+    "root": "0x27765868c92b87039edfbe776c98833cdce0e360220d5dcc7a8382a216725438",
+    "depth": 4,
+    "length": 10,
+    "proofs": [
+      {
+        "index": 0,
+        "leaf": "0x067a8b1928f341c848b2670b0b10bad9248d6a776eb48900ec6434ae18787a6e",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000010",
+        "enables": "15",
+        "siblings": [
+          "0x5d3d85f706d66ff4d5d1f2592cfbebd19bd0ff120b6f6e900ea99eb6fc26240c",
+          "0xe1c9ff11721a2a87a240459d6605447012a751aeb62b229cf14034b11612abd3",
+          "0xb90e5c91ad1aa08eb2baaf5f16d4f269f711e58276e2eeb928c192c3856d9deb",
+          "0xe852c73d3ad53d3ed3501419d4ecdb013a976ffa77a60edaf864cd574ffc82ce"
+        ]
+      },
+      {
+        "index": 1,
+        "leaf": "0x5d3d85f706d66ff4d5d1f2592cfbebd19bd0ff120b6f6e900ea99eb6fc26240c",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000011",
+        "enables": "15",
+        "siblings": [
+          "0x067a8b1928f341c848b2670b0b10bad9248d6a776eb48900ec6434ae18787a6e",
+          "0xe1c9ff11721a2a87a240459d6605447012a751aeb62b229cf14034b11612abd3",
+          "0xb90e5c91ad1aa08eb2baaf5f16d4f269f711e58276e2eeb928c192c3856d9deb",
+          "0xe852c73d3ad53d3ed3501419d4ecdb013a976ffa77a60edaf864cd574ffc82ce"
+        ]
+      },
+      {
+        "index": 2,
+        "leaf": "0x49e004aad36645fa2731bddc9db58ff4d38d9ee9bee5c5e77a622318b1f907be",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "enables": "15",
+        "siblings": [
+          "0x4d5e8d0f8a00205074c9e63c3ecdc89838a7737efed8a752c3169744841cb30b",
+          "0x06e242325ac2977c4d29191e9a34a3772e123756663b4f2c8a50fa4f09d43704",
+          "0xb90e5c91ad1aa08eb2baaf5f16d4f269f711e58276e2eeb928c192c3856d9deb",
+          "0xe852c73d3ad53d3ed3501419d4ecdb013a976ffa77a60edaf864cd574ffc82ce"
+        ]
+      },
+      {
+        "index": 3,
+        "leaf": "0x4d5e8d0f8a00205074c9e63c3ecdc89838a7737efed8a752c3169744841cb30b",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000013",
+        "enables": "15",
+        "siblings": [
+          "0x49e004aad36645fa2731bddc9db58ff4d38d9ee9bee5c5e77a622318b1f907be",
+          "0x06e242325ac2977c4d29191e9a34a3772e123756663b4f2c8a50fa4f09d43704",
+          "0xb90e5c91ad1aa08eb2baaf5f16d4f269f711e58276e2eeb928c192c3856d9deb",
+          "0xe852c73d3ad53d3ed3501419d4ecdb013a976ffa77a60edaf864cd574ffc82ce"
+        ]
+      },
+      {
+        "index": 4,
+        "leaf": "0xeff0ae292a2e8d35da9eaad886bd0ba1d560c6561a80450dc3889dbc23daf27b",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000014",
+        "enables": "15",
+        "siblings": [
+          "0x2d9fb9d5a61d120ebe56c0a391bcae99578eaba38fc756a2e6fb9e378aa539a6",
+          "0x844c3f67a642c16b5d5ccb7b8de704d3a8cb3f900cb2a64a72dcbc1df0920e69",
+          "0x271c8ada0e46754fe1f00f3b39756411ad92f4e3d1c9cc1e3e2a51f4c1d77f22",
+          "0xe852c73d3ad53d3ed3501419d4ecdb013a976ffa77a60edaf864cd574ffc82ce"
+        ]
+      },
+      {
+        "index": 5,
+        "leaf": "0x2d9fb9d5a61d120ebe56c0a391bcae99578eaba38fc756a2e6fb9e378aa539a6",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000015",
+        "enables": "15",
+        "siblings": [
+          "0xeff0ae292a2e8d35da9eaad886bd0ba1d560c6561a80450dc3889dbc23daf27b",
+          "0x844c3f67a642c16b5d5ccb7b8de704d3a8cb3f900cb2a64a72dcbc1df0920e69",
+          "0x271c8ada0e46754fe1f00f3b39756411ad92f4e3d1c9cc1e3e2a51f4c1d77f22",
+          "0xe852c73d3ad53d3ed3501419d4ecdb013a976ffa77a60edaf864cd574ffc82ce"
+        ]
+      },
+      {
+        "index": 6,
+        "leaf": "0x9061594d4a8a53fa2ac9fcd6b9577e5fb2d0454b3b797fb84eac616eaa966c19",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000016",
+        "enables": "15",
+        "siblings": [
+          "0x5317a9156fd45c517f746ce9795e91d7a6fc2d51d353eb9a2fcf0a510e578c8c",
+          "0x407c3c44a2bab9e7d79d5f3202ae73e09bb2c1075b66ee7abe1b46f5846304ae",
+          "0x271c8ada0e46754fe1f00f3b39756411ad92f4e3d1c9cc1e3e2a51f4c1d77f22",
+          "0xe852c73d3ad53d3ed3501419d4ecdb013a976ffa77a60edaf864cd574ffc82ce"
+        ]
+      },
+      {
+        "index": 7,
+        "leaf": "0x5317a9156fd45c517f746ce9795e91d7a6fc2d51d353eb9a2fcf0a510e578c8c",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000017",
+        "enables": "15",
+        "siblings": [
+          "0x9061594d4a8a53fa2ac9fcd6b9577e5fb2d0454b3b797fb84eac616eaa966c19",
+          "0x407c3c44a2bab9e7d79d5f3202ae73e09bb2c1075b66ee7abe1b46f5846304ae",
+          "0x271c8ada0e46754fe1f00f3b39756411ad92f4e3d1c9cc1e3e2a51f4c1d77f22",
+          "0xe852c73d3ad53d3ed3501419d4ecdb013a976ffa77a60edaf864cd574ffc82ce"
+        ]
+      },
+      {
+        "index": 8,
+        "leaf": "0xdad596d66080db23312da45b1527911d4b2123b8e02dc88ed4a899bd37547534",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000018",
+        "enables": "9",
+        "siblings": [
+          "0x4145d1d9acfe8e57c52b6e10dab94af8d5f8de940599e322383490465b927aec",
+          "0xef6a46ac4e22fcd0e490f13fb2c7f9cc590d801b0d6b1de94384e6894a295dff"
+        ]
+      },
+      {
+        "index": 9,
+        "leaf": "0x4145d1d9acfe8e57c52b6e10dab94af8d5f8de940599e322383490465b927aec",
+        "value": "0x0000000000000000000000000000000000000000000000000000000000000019",
+        "enables": "9",
+        "siblings": [
+          "0xdad596d66080db23312da45b1527911d4b2123b8e02dc88ed4a899bd37547534",
+          "0xef6a46ac4e22fcd0e490f13fb2c7f9cc590d801b0d6b1de94384e6894a295dff"
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "treeDepth": 4,
+    "length": 10,
+    "minOpsPerSecond": 2000
+  }
+}

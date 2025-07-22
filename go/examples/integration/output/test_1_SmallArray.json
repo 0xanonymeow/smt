@@ -1,0 +1,45 @@
+{
+  "name": "SmallArray",
+  "description": "Basic functionality test with small array",
+  "treeData": {
+    "root": "0x23033ea3eea27c13d2b82cfc1b483fbc73fb560917b23cd8ee639c4a17b3f6d0",
+    "depth": 2,
+    "length": 3,
+    "proofs": [
+      {
+        "index": 0,
+        "leaf": "0x8d9fbf47b205b24520c1ce3f39c0b1f87a5737029a6c5bb8d30e203c707fddc4",
+        "value": "0x000000000000000000000000000000000000000000000000000000000000000a",
+        "enables": "3",
+        "siblings": [
+          "0xf4cdd4b32d40498c84a7acb56384989ed2b5f28c5bb910d54cb25cc50d97650b",
+          "0x70cd8dc85dd55afcc32bf9afecc6caa162971e62d7db9092189a4bfc83c8e4e0"
+        ]
+      },
+      {
+        "index": 1,
+        "leaf": "0xf4cdd4b32d40498c84a7acb56384989ed2b5f28c5bb910d54cb25cc50d97650b",
+        "value": "0x000000000000000000000000000000000000000000000000000000000000000b",
+        "enables": "3",
+        "siblings": [
+          "0x8d9fbf47b205b24520c1ce3f39c0b1f87a5737029a6c5bb8d30e203c707fddc4",
+          "0x70cd8dc85dd55afcc32bf9afecc6caa162971e62d7db9092189a4bfc83c8e4e0"
+        ]
+      },
+      {
+        "index": 2,
+        "leaf": "0xdc6036cccf53e8722844db2f4e3aa0bd99e8f00d344393f45765052670873325",
+        "value": "0x000000000000000000000000000000000000000000000000000000000000000c",
+        "enables": "2",
+        "siblings": [
+          "0xa0c067a852e339129dd7526c02a2c8c1684070b6cf5c9b5488ff11cfa34c4e3b"
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "treeDepth": 2,
+    "length": 3,
+    "minOpsPerSecond": 1000
+  }
+}

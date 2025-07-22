@@ -1,0 +1,95 @@
+{
+  "root": "0xeaac0d1a1690dfe83f32a13479e91a5ba5306a9cfa99a16a9a74433669ce56ef",
+  "depth": 3,
+  "length": 8,
+  "proofs": [
+    {
+      "index": 0,
+      "leaf": "0x681f90a7b5c654f780bfb5e73199acf10aabdd8b957bdefa56e40e23f90618d5",
+      "value": "0x00000000000000000000000000000000000000000000000000000000deadbeef",
+      "enables": "7",
+      "siblings": [
+        "0x1b8cefabe5effb648b818aa7fd6075acf80a40a000614f4d68edafc2f502cc7d",
+        "0x606d9dc47d74ca9f8ff9a45a7c1c7726d0dadaee88aa9c5a7b3065d55871791f",
+        "0xa9431b78d43908cbd59a55ef73ed52d6f0f05f40d13ff4f4b8805c45cf1bdc5e"
+      ]
+    },
+    {
+      "index": 1,
+      "leaf": "0x1b8cefabe5effb648b818aa7fd6075acf80a40a000614f4d68edafc2f502cc7d",
+      "value": "0x00000000000000000000000000000000000000000000000000000000cafebabe",
+      "enables": "7",
+      "siblings": [
+        "0x681f90a7b5c654f780bfb5e73199acf10aabdd8b957bdefa56e40e23f90618d5",
+        "0x606d9dc47d74ca9f8ff9a45a7c1c7726d0dadaee88aa9c5a7b3065d55871791f",
+        "0xa9431b78d43908cbd59a55ef73ed52d6f0f05f40d13ff4f4b8805c45cf1bdc5e"
+      ]
+    },
+    {
+      "index": 2,
+      "leaf": "0xeff1d6ea64992b0fb17d0a8796dc03ff412a33384dc302e2e27d5e3fe704bd1f",
+      "value": "0x00000000000000000000000000000000000000000000000000000000feedface",
+      "enables": "7",
+      "siblings": [
+        "0xd251a4e99c9a767ad8e4d0b82e093eeb84fad1c17945d3b69e35694d702839d9",
+        "0x86e31409a6cbaa80a73f24586abb997e9a1fa11e73ce9370cfc18093f2cba80b",
+        "0xa9431b78d43908cbd59a55ef73ed52d6f0f05f40d13ff4f4b8805c45cf1bdc5e"
+      ]
+    },
+    {
+      "index": 3,
+      "leaf": "0xd251a4e99c9a767ad8e4d0b82e093eeb84fad1c17945d3b69e35694d702839d9",
+      "value": "0x000000000000000000000000000000000000000000000000000000000badf00d",
+      "enables": "7",
+      "siblings": [
+        "0xeff1d6ea64992b0fb17d0a8796dc03ff412a33384dc302e2e27d5e3fe704bd1f",
+        "0x86e31409a6cbaa80a73f24586abb997e9a1fa11e73ce9370cfc18093f2cba80b",
+        "0xa9431b78d43908cbd59a55ef73ed52d6f0f05f40d13ff4f4b8805c45cf1bdc5e"
+      ]
+    },
+    {
+      "index": 4,
+      "leaf": "0xc7075d8d03df3b4ea31533233a2d453075b1239cea7a5b0043ffc0f8249cec03",
+      "value": "0x0000000000000000000000000000000000000000000000000000000012345678",
+      "enables": "7",
+      "siblings": [
+        "0x2d466c61303ac5a7feb114868b37467f72479206cdf9123b20a4dcaf856dc034",
+        "0xd7abc2cef4908838d1cb2bce147b5fc0ae018beb11e59cdcd4c2695439bd3b0c",
+        "0x6723f3dfe15d4cad6c8cd4c2d7d58a5985db2d0da88ecc6860ed3d50c786b7db"
+      ]
+    },
+    {
+      "index": 5,
+      "leaf": "0x2d466c61303ac5a7feb114868b37467f72479206cdf9123b20a4dcaf856dc034",
+      "value": "0x000000000000000000000000000000000000000000000000000000009abcdef0",
+      "enables": "7",
+      "siblings": [
+        "0xc7075d8d03df3b4ea31533233a2d453075b1239cea7a5b0043ffc0f8249cec03",
+        "0xd7abc2cef4908838d1cb2bce147b5fc0ae018beb11e59cdcd4c2695439bd3b0c",
+        "0x6723f3dfe15d4cad6c8cd4c2d7d58a5985db2d0da88ecc6860ed3d50c786b7db"
+      ]
+    },
+    {
+      "index": 6,
+      "leaf": "0xd817ba8d56baf9675c46fde5d909d4f148635566a6484e9ab385f6907b49da92",
+      "value": "0x0000000000000000000000000000000000000000000000000000000013579bdf",
+      "enables": "7",
+      "siblings": [
+        "0x9542b83b50f80dada296487558a32dfe73c3be833c5aa4bd5261a93c7efb2942",
+        "0x58baabe135ff55ae9afa2e03090ca3c3a9756a9fd25e4d611ad2e0edf294f36d",
+        "0x6723f3dfe15d4cad6c8cd4c2d7d58a5985db2d0da88ecc6860ed3d50c786b7db"
+      ]
+    },
+    {
+      "index": 7,
+      "leaf": "0x9542b83b50f80dada296487558a32dfe73c3be833c5aa4bd5261a93c7efb2942",
+      "value": "0x000000000000000000000000000000000000000000000000000000002468ace0",
+      "enables": "7",
+      "siblings": [
+        "0xd817ba8d56baf9675c46fde5d909d4f148635566a6484e9ab385f6907b49da92",
+        "0x58baabe135ff55ae9afa2e03090ca3c3a9756a9fd25e4d611ad2e0edf294f36d",
+        "0x6723f3dfe15d4cad6c8cd4c2d7d58a5985db2d0da88ecc6860ed3d50c786b7db"
+      ]
+    }
+  ]
+}
