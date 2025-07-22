@@ -1,4 +1,4 @@
-# Sparse Merkle Tree Libraries Documentation
+# Sparse Merkle Tree Documentation
 
 Welcome to the comprehensive documentation for the production-ready Sparse Merkle Tree (SMT) libraries with 100% test coverage for Go and Solidity.
 
@@ -34,7 +34,7 @@ This project provides cross-platform compatible Sparse Merkle Tree implementatio
 # Run all tests (100% coverage)
 make test-coverage
 
-# Run cross-platform compatibility tests  
+# Run cross-platform compatibility tests
 make test-cross-platform
 
 # Build all Go code and examples
