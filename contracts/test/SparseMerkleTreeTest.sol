@@ -133,15 +133,16 @@ contract SparseMerkleTreeTest is Test {
     }
 
     function testHashFunction() public {
-        // Test zero case
+        // Test zero case - should always hash regardless of input values
         bytes32 result = SparseMerkleTree.hash(bytes32(0), bytes32(0));
-        assertEq(result, bytes32(0));
+        bytes32 expected = keccak256(abi.encodePacked(bytes32(0), bytes32(0)));
+        assertEq(result, expected);
         
         // Test non-zero case
         bytes32 left = keccak256("left");
         bytes32 right = keccak256("right");
-        bytes32 expected = keccak256(abi.encodePacked(left, right));
+        bytes32 expectedNonZero = keccak256(abi.encodePacked(left, right));
         bytes32 actual = SparseMerkleTree.hash(left, right);
-        assertEq(actual, expected);
+        assertEq(actual, expectedNonZero);
     }
 }

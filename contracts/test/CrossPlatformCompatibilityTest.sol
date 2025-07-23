@@ -24,9 +24,10 @@ contract CrossPlatformCompatibilityTest is Test {
 
     /// @notice Test hash function compatibility with Go implementation
     function testHashFunctionCompatibility() public {
-        // Test case 1: Both inputs zero should return zero
+        // Test case 1: Hash of zero inputs should return keccak256(0,0)
         bytes32 result1 = SparseMerkleTree.hash(bytes32(0), bytes32(0));
-        assertEq(result1, bytes32(0), "Hash of zero inputs should be zero");
+        bytes32 expected1 = keccak256(abi.encodePacked(bytes32(0), bytes32(0)));
+        assertEq(result1, expected1, "Hash of zero inputs should match keccak256(0,0)");
 
         // Test case 2: Known hash values from Go implementation
         bytes32 left2 = 0x1111111111111111111111111111111111111111111111111111111111111111;

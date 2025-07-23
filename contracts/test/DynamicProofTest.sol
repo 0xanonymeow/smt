@@ -16,12 +16,31 @@ contract DynamicProofTest is Test {
 
     /// @notice Test that reads Go-generated proof data via FFI
     function testGoGeneratedProofs() public {
-        // Use FFI to read the JSON file
+        // Try to read the JSON file, skip if it doesn't exist
         string[] memory inputs = new string[](2);
         inputs[0] = "cat";
         inputs[1] = "test_data.json";
-        bytes memory ffiResult = vm.ffi(inputs);
+        
+        bytes memory ffiResult;
+        try vm.ffi(inputs) returns (bytes memory ffiData) {
+            ffiResult = ffiData;
+        } catch {
+            // File doesn't exist or can't be read, skip test
+            console.log("=== Dynamic Go-Generated Proof Test SKIPPED ===");
+            console.log("test_data.json not found - run 'cd go && go run cmd/generate_test_data.go' to generate test data");
+            vm.skip(true);
+            return;
+        }
+        
         string memory json = string(ffiResult);
+        
+        // Check if the file content is empty or invalid
+        if (bytes(json).length == 0) {
+            console.log("=== Dynamic Go-Generated Proof Test SKIPPED ===");
+            console.log("test_data.json is empty - run 'cd go && go run cmd/generate_test_data.go' to generate test data");
+            vm.skip(true);
+            return;
+        }
 
         // Parse the root hash
         bytes32 expectedRoot = vm.parseJsonBytes32(json, ".root");

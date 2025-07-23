@@ -265,12 +265,13 @@ contract SparseMerkleTreeBenchmarkTest is Test {
         console2.log("Non-zero Hash Gas:", nonZeroGas);
         console2.log("Zero Hash Gas:", zeroGas);
         console2.log(
-            "Zero shortcut savings:",
-            nonZeroGas > zeroGas ? nonZeroGas - zeroGas : 0
+            "Gas difference (should be similar now):",
+            nonZeroGas > zeroGas ? nonZeroGas - zeroGas : zeroGas - nonZeroGas
         );
 
         assertNotEq(result1, bytes32(0), "Non-zero hash should not be zero");
-        assertEq(result2, bytes32(0), "Zero hash should be zero");
+        bytes32 expectedZeroHash = keccak256(abi.encodePacked(bytes32(0), bytes32(0)));
+        assertEq(result2, expectedZeroHash, "Zero hash should be keccak256(0,0)");
     }
 
     function testBenchmark_BatchHash() public {
