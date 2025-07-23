@@ -38,22 +38,27 @@ func main() {
     }
     
     // Insert a key-value pair
-    key := big.NewInt(1)
-    value := smt.Bytes32{1, 2, 3, 4, 5}
-    root, err := tree.Insert(key, value)
+    index := big.NewInt(1)
+    value, err := smt.NewBytes32FromHex("0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef")
     if err != nil {
         panic(err)
     }
     
-    // Get the proof for a key
-    proof, err := tree.Get(key)
+    updateProof, err := tree.Insert(index, value)
+    if err != nil {
+        panic(err)
+    }
+    
+    // Get the proof for the index
+    proof, err := tree.Get(index)
     if err != nil {
         panic(err)
     }
     
     if proof.Exists {
-        fmt.Printf("Value exists at key %s\n", key.String())
-        fmt.Printf("Tree root: %s\n", root)
+        fmt.Printf("Value exists at index %s\n", index.String())
+        fmt.Printf("Tree root: %s\n", tree.Root())
+        fmt.Printf("Proof leaf: %s\n", proof.Leaf)
     }
 }
 ```
@@ -68,11 +73,23 @@ type Bytes32 [32]byte
 
 // Proof structure
 type Proof struct {
+    Exists   bool      // Whether the leaf exists
+    Leaf     Bytes32   // Computed leaf hash
+    Value    Bytes32   // Raw value stored at the index
+    Index    *big.Int  // Tree index
+    Enables  *big.Int  // Sibling enable bitmask
+    Siblings []Bytes32 // Non-zero sibling hashes
+}
+
+// UpdateProof represents the proof data for insert/update operations
+type UpdateProof struct {
     Exists   bool
+    Leaf     Bytes32
     Value    Bytes32
     Index    *big.Int
-    Enables  []bool
+    Enables  *big.Int
     Siblings []Bytes32
+    NewLeaf  Bytes32   // New leaf hash after operation
 }
 
 // Database interface
@@ -86,29 +103,17 @@ type Database interface {
 ### SparseMerkleTree Methods
 
 - `NewSparseMerkleTree(db Database, depth uint16) (*SparseMerkleTree, error)`
-- `Insert(index *big.Int, value Bytes32) (Bytes32, error)`
-- `Update(index *big.Int, value Bytes32) (Bytes32, error)`
-- `Upsert(index *big.Int, value Bytes32) (Bytes32, error)`
-- `Delete(index *big.Int) (Bytes32, error)`
+- `Insert(index *big.Int, leaf Bytes32) (*UpdateProof, error)`
+- `Update(index *big.Int, newLeaf Bytes32) (*UpdateProof, error)`
+- `Delete(index *big.Int) (*UpdateProof, error)`
 - `Get(index *big.Int) (*Proof, error)`
 - `Exists(index *big.Int) (bool, error)`
 - `Root() Bytes32`
-- `VerifyProof(proof *Proof) bool`
 
-### Key-Value Operations
+### Utility Functions
 
-- `InsertKV(key string, value Bytes32) (Bytes32, error)`
-- `UpdateKV(key string, value Bytes32) (Bytes32, error)`
-- `DeleteKV(key string) (Bytes32, error)`
-- `GetKV(key string) (Bytes32, bool, error)`
-- `ExistsKV(key string) (bool, error)`
-
-### Batch Operations
-
-- `BatchInsert(indices []*big.Int, values []Bytes32) (Bytes32, error)`
-- `BatchUpdate(indices []*big.Int, values []Bytes32) (Bytes32, error)`
-- `BatchUpsert(indices []*big.Int, values []Bytes32) (Bytes32, error)`
-- `BatchDelete(indices []*big.Int) (Bytes32, error)`
+- `NewBytes32FromHex(hex string) (Bytes32, error)`
+- `VerifyProof(root Bytes32, depth uint16, proof *Proof) bool`
 
 ## Testing
 

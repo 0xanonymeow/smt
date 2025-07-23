@@ -43,7 +43,12 @@ go get github.com/0xanonymeow/smt/go
 ```go
 import smt "github.com/0xanonymeow/smt/go"
 
-tree := smt.NewSparseMerkleTree(16, nil)
+// Create a new SMT with in-memory database
+db := smt.NewInMemoryDatabase()
+tree, err := smt.NewSparseMerkleTree(db, 16)
+if err != nil {
+    panic(err)
+}
 ```
 
 See [go/README.md](go/README.md) for detailed Go documentation.

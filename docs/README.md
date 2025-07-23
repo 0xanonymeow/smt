@@ -42,16 +42,21 @@ import smt "github.com/0xanonymeow/smt/go"
 // Create a new SMT with in-memory database
 db := smt.NewInMemoryDatabase()
 tree, err := smt.NewSparseMerkleTree(db, 16)
+if err != nil {
+    panic(err)
+}
 
 // Insert a value
-key := big.NewInt(42)
-value := smt.Bytes32{1, 2, 3, 4, 5}
-root, err := tree.Insert(key, value)
+index := big.NewInt(42)
+value, err := smt.NewBytes32FromHex("0x1234...")
+if err != nil {
+    panic(err)
+}
 
-// Batch operations
-indices := []*big.Int{big.NewInt(1), big.NewInt(2)}
-values := []smt.Bytes32{{1}, {2}}
-root, err = tree.BatchInsert(indices, values)
+updateProof, err := tree.Insert(index, value)
+if err != nil {
+    panic(err)
+}
 ```
 
 ### Solidity Library
