@@ -65,7 +65,7 @@ type Database interface {
 
 Both libraries implement identical keccak256 hash functions:
 
-- **Zero Optimization**: Returns 0 if all inputs are 0
+- **Consistent Hashing**: Always uses keccak256 regardless of input values
 - **Consistent Serialization**: 32-byte big-endian format
 - **Cross-Platform Verification**: Proofs generated in one library verify in the other
 

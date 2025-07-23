@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 /// @title SMTHash Library
 /// @notice Provides hash functions and bit utilities for Sparse Merkle Trees
 library SMTHash {
-    /// @notice keccak hash, but returns 0 if both inputs are 0
+    /// @notice keccak256 hash function
     /// @param left Left value
     /// @param right Right value
     function hash(
@@ -12,14 +12,10 @@ library SMTHash {
         bytes32 right
     ) internal pure returns (bytes32 ret) {
         assembly {
-            // Optimized zero check: if both inputs are zero, return zero
-            if iszero(and(iszero(left), iszero(right))) {
-                // Use scratch space for hashing
-                mstore(0x00, left)
-                mstore(0x20, right)
-                ret := keccak256(0x00, 0x40)
-            }
-            // ret is already 0 if both inputs are zero
+            // Use scratch space for hashing
+            mstore(0x00, left)
+            mstore(0x20, right)
+            ret := keccak256(0x00, 0x40)
         }
     }
 
@@ -46,13 +42,10 @@ library SMTHash {
                 let left := mload(add(pairsPtr, mul(mul(i, 2), 0x20)))
                 let right := mload(add(pairsPtr, mul(add(mul(i, 2), 1), 0x20)))
 
-                let result := 0
-                // Optimized zero check
-                if iszero(and(iszero(left), iszero(right))) {
-                    mstore(0x00, left)
-                    mstore(0x20, right)
-                    result := keccak256(0x00, 0x40)
-                }
+                // Always hash the inputs
+                mstore(0x00, left)
+                mstore(0x20, right)
+                let result := keccak256(0x00, 0x40)
 
                 mstore(add(resultsPtr, mul(i, 0x20)), result)
             }

@@ -264,7 +264,7 @@ library SparseMerkleTree {
     
     // ============ EXPORT HASH AND UTILITY FUNCTIONS ============
     
-    /// @notice keccak hash, but returns 0 if both inputs are 0
+    /// @notice keccak256 hash function
     /// @param left Left value
     /// @param right Right value
     function hash(bytes32 left, bytes32 right) internal pure returns (bytes32) {
