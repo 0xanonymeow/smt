@@ -1,6 +1,6 @@
 # Solidity API Reference
 
-Complete API documentation for the Solidity SMT library and deployable contract with cross-platform compatibility and gas optimizations.
+API documentation for the Solidity SMT library.
 
 ## Table of Contents
 

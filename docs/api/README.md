@@ -1,19 +1,18 @@
 # API Documentation
 
-Complete API reference for both Go and Solidity SMT libraries with 100% test coverage.
+API reference for both Go and Solidity SMT libraries.
 
 ## Libraries Overview
 
 - **[Go API](go.md)** - Complete Go library reference with comprehensive examples
 - **[Solidity API](solidity.md)** - Complete Solidity library reference with gas optimization notes
 
-## Testing & Coverage
+## Testing
 
-The APIs are thoroughly tested with:
-- **100% Go test coverage** with defensive code exclusion
-- **Comprehensive Solidity tests** including cross-platform validation
-- **18 organized test files** covering core, batch, benchmark, and integration tests
-- **Cross-platform compatibility tests** ensuring Go and Solidity interoperability
+The APIs include tests for:
+- Core functionality (insert, update, get, delete)
+- Cross-platform proof compatibility
+- Basic performance benchmarks
 
 ## Common Data Structures
 

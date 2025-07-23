@@ -1,6 +1,6 @@
 # Sparse Merkle Tree Documentation
 
-Welcome to the comprehensive documentation for the production-ready Sparse Merkle Tree (SMT) libraries with 100% test coverage for Go and Solidity.
+Documentation for Sparse Merkle Tree (SMT) libraries for Go and Solidity.
 
 ## Quick Navigation
 
@@ -13,35 +13,25 @@ Welcome to the comprehensive documentation for the production-ready Sparse Merkl
 
 This project provides cross-platform compatible Sparse Merkle Tree implementations:
 
-- **Go Library** (`go/smt.go`) - Complete SMT with CRUD operations, batch operations, and key-value interface
-- **Solidity Library** (`contracts/src/SparseMerkleTree.sol`) - On-chain SMT with state management
-- **Deployable Contract** (`contracts/src/SparseMerkleTreeContract.sol`) - Production-ready SMT contract
+- **Go Library** (`go/smt.go`) - SMT with CRUD operations and key-value interface
+- **Solidity Library** (`contracts/src/SparseMerkleTree.sol`) - On-chain SMT implementation
 
 ## Key Features
 
-✅ **100% Test Coverage** - Comprehensive Go test coverage with defensive code exclusion  
-✅ **Cross-Platform Compatibility** - Proofs generated in Go verify in Solidity and vice versa  
-✅ **Complete CRUD Operations** - Insert, Update, Get, Delete, Exists with comprehensive error handling  
-✅ **Batch Operations** - Efficient bulk insertions, updates, and deletions with collision handling  
-✅ **Production Ready** - Optimized for performance, security, and gas efficiency  
-✅ **Build System** - Complete Makefile with test, coverage, build, and clean targets
+- **Cross-Platform Compatibility** - Proofs generated in Go verify in Solidity
+- **Standard CRUD Operations** - Insert, Update, Get, Delete, Exists methods
+- **Batch Operations** - Bulk insertions and updates
 
 ## Quick Start
 
-### Using the Build System
+### Building and Testing
 
 ```bash
-# Run all tests (100% coverage)
-make test-coverage
+# Run tests
+make test
 
-# Run cross-platform compatibility tests
-make test-cross-platform
-
-# Build all Go code and examples
+# Build
 make build
-
-# Clean generated files
-make clean
 ```
 
 ### Go Library

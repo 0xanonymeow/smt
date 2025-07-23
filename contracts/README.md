@@ -1,6 +1,6 @@
 # Sparse Merkle Tree Solidity Library
 
-A gas-efficient Solidity implementation of Sparse Merkle Trees with complete state management.
+Solidity implementation of Sparse Merkle Trees.
 
 ## Installation
 
@@ -19,12 +19,9 @@ import {SparseMerkleTreeContract} from "smt/contracts/src/SparseMerkleTreeContra
 
 ## Features
 
-- **Complete Tree Operations**: Insert, Update, Get with state management
-- **Gas Optimized**: Assembly optimizations for critical paths
-- **Proof Generation**: On-chain proof generation and verification
-- **Event Emission**: Comprehensive events for off-chain indexing
+- **Standard Tree Operations**: Insert, Update, Get methods
+- **Proof Verification**: On-chain proof verification
 - **Cross-Platform**: Compatible with Go implementation proofs
-- **Access Control**: Built-in security and permission management
 
 ## Quick Start
 
@@ -154,16 +151,6 @@ The library includes several gas optimizations:
 
 ## Testing
 
-### Using Make (Recommended)
-```bash
-# Run all tests from project root
-make test
-
-# Run cross-platform compatibility tests
-make test-cross-platform
-```
-
-### Manual Testing
 ```bash
 cd contracts
 
@@ -172,22 +159,7 @@ forge test
 
 # Run with gas reporting
 forge test --gas-report
-
-# Run specific test patterns
-forge test --match-test "testInsert"
-forge test --match-test "testCrossPlatform"
-
-# Run cross-platform validation with Go-generated data
-forge test --match-test "testGoGeneratedProofs" -vv --ffi
 ```
-
-### Test Coverage
-The Solidity implementation includes comprehensive tests for:
-- Core tree operations (insert, update, get)
-- Proof generation and verification
-- Cross-platform compatibility with Go implementation
-- Gas optimization validation
-- Error handling and edge cases
 
 ## Cross-Platform Compatibility
 

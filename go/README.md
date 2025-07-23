@@ -1,6 +1,6 @@
 # Sparse Merkle Tree Go Library
 
-A high-performance Go implementation of Sparse Merkle Trees with 100% test coverage and cross-platform compatibility.
+Go implementation of Sparse Merkle Trees with cross-platform proof compatibility.
 
 ## Installation
 
@@ -10,18 +10,13 @@ go get github.com/0xanonymeow/smt/go
 
 ## Features
 
-- **100% Test Coverage**: Comprehensive test coverage with defensive code exclusion
-- **Complete CRUD Operations**: Insert, Update, Get, Delete, and Exists methods
-- **Batch Operations**: Efficient bulk insertions and updates with collision handling
+- **Standard SMT Operations**: Insert, Update, Get, Delete, and Exists methods
+- **Batch Operations**: Bulk insertions and updates
 - **Key-Value Support**: String-based keys with automatic hashing
 - **Cross-Platform Compatibility**: Generates proofs verifiable in Solidity
-- **Performance Optimized**: Memory pooling, concurrent operations, efficient memory usage
-- **Thread-Safe Options**: Can be used with proper synchronization
-- **Comprehensive Testing**: 18 organized test files with unit tests, integration tests, and benchmarks
 
 ## Quick Start
 
-See [GETTING_STARTED.md](./GETTING_STARTED.md) for detailed usage instructions.
 
 ### Basic Example
 
@@ -117,43 +112,16 @@ type Database interface {
 
 ## Testing
 
-The library maintains 100% test coverage with comprehensive test suites:
-
-### Using Make (Recommended)
 ```bash
-# Run all tests from project root
-make test
+# Run tests
+go test ./tests/...
 
-# Run tests with coverage report
-make test-coverage
-
-# Run cross-platform compatibility tests
-make test-cross-platform
-```
-
-### Manual Testing
-```bash
-cd go
-
-# Run all tests
-go test ./tests ./tests/benchmark -v
-
-# Generate coverage report (100% coverage achieved)
-go test -coverprofile=coverage.out ./tests ./tests/benchmark
-go tool cover -html=coverage.out -o coverage.html
+# Run with coverage
+go test -cover ./tests/...
 
 # Run benchmarks
 go test -bench=. ./tests/benchmark/...
-
-# Check coverage with exclusions
-go-test-coverage --config=.testcoverage.yml
 ```
-
-### Test Organization
-- **tests/core/**: Core functionality tests (insertion, deletion, proofs)
-- **tests/batch/**: Batch operations and collision handling tests
-- **tests/benchmark/**: Performance benchmarks and stress tests
-- **tests/integration/**: Cross-platform compatibility tests
 
 ## Performance
 

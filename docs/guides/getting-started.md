@@ -1,6 +1,6 @@
 # Getting Started Guide
 
-This guide will help you get up and running with the SMT libraries with 100% test coverage quickly.
+This guide will help you get up and running with the SMT libraries.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ This guide will help you get up and running with the SMT libraries with 100% tes
 
 ## Build System
 
-The project includes a comprehensive Makefile for all operations:
+Basic build commands:
 
 ```bash
 # Run all tests (100% coverage)

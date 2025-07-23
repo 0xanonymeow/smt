@@ -1,6 +1,6 @@
 # Sparse Merkle Tree
 
-Production-ready Sparse Merkle Tree implementations in Go and Solidity with cross-platform compatibility and 100% test coverage.
+Sparse Merkle Tree implementations in Go and Solidity with cross-platform proof compatibility.
 
 ## Repository Structure
 
@@ -11,11 +11,7 @@ smt/
 │   ├── batch.go                # Batch operations
 │   ├── database.go             # Database interface
 │   ├── examples/               # Usage examples (basic, advanced, integration, sequential)
-│   ├── tests/                  # Comprehensive test suite (18 organized test files)
-│   │   ├── core/               # Core functionality tests
-│   │   ├── batch/              # Batch operations tests
-│   │   ├── benchmark/          # Performance benchmarks
-│   │   └── integration/        # Cross-platform integration tests
+│   └── tests/                  # Test suite
 │   └── cmd/                    # Command-line utilities
 │
 ├── contracts/                   # Solidity implementation
@@ -31,13 +27,10 @@ smt/
 
 ## Features
 
-- **100% Test Coverage**: Comprehensive test coverage with defensive code exclusion
-- **Cross-Platform Compatibility**: Proofs generated in Go can be verified in Solidity and vice versa
-- **Complete CRUD Operations**: Insert, Update, Get, Delete, and Exists methods
-- **Batch Operations**: Efficient bulk insertions and updates
-- **Performance Optimized**: Memory pooling, concurrent operations, and gas optimizations
-- **Production Ready**: Thread-safe, comprehensive error handling, and extensive documentation
-- **Build System**: Complete Makefile with test, coverage, build, and clean targets
+- **Cross-Platform Compatibility**: Proofs generated in Go can be verified in Solidity
+- **Standard SMT Operations**: Insert, Update, Get, Delete, and Exists methods
+- **Batch Operations**: Bulk insertions and updates
+- **Simple Build System**: Makefile with test, build, and clean targets
 
 ## Quick Start
 
@@ -67,39 +60,16 @@ import {SparseMerkleTreeLib} from "smt/contracts/src/SparseMerkleTree.sol";
 
 See [contracts/README.md](contracts/README.md) for detailed Solidity documentation.
 
-## Cross-Platform Example
+## Cross-Platform Proof Compatibility
 
-### Generate Proof in Go
-
-```go
-tree := smt.NewSparseMerkleTree(16, nil)
-key := big.NewInt(1)
-value := smt.Serialize(big.NewInt(100))
-tree.Insert(key, value)
-
-proof := tree.Get(key)
-// Export proof for Solidity verification
-```
-
-### Verify Proof in Solidity
-
-```solidity
-function verifyGoProof(
-    bytes32 leaf,
-    uint256 index,
-    uint256 enables,
-    bytes32[] calldata siblings
-) external pure returns (bool) {
-    return SparseMerkleTreeLib.verifyProof(leaf, index, enables, siblings);
-}
-```
+Proofs generated in Go can be verified in Solidity contracts, enabling off-chain computation with on-chain verification.
 
 ## Implementation Details
 
 Both implementations follow the same core algorithm:
 
 - **Tree Depth**: Configurable up to 256 levels
-- **Hash Function**: Keccak256 with special zero-value handling
+- **Hash Function**: Keccak256
 - **Proof Format**: Identical structure across platforms
 - **Serialization**: Consistent hex encoding with 0x prefix
 
@@ -107,13 +77,11 @@ Both implementations follow the same core algorithm:
 
 ### Using the Makefile
 
-The project includes a comprehensive Makefile for all development tasks:
-
 ```bash
 # Run all tests
 make test
 
-# Run tests with coverage report (100% coverage)
+# Run tests with coverage report
 make test-coverage
 
 # Run cross-platform compatibility tests
